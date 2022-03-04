@@ -8,6 +8,7 @@ db = mysql.connector.connect(
   user = "root",
   password = '12345678',
   database = "TaipeiData",
+  auth_plugin='mysql_native_password'
   )
 cursor = db.cursor(buffered=True)
 print("連線成功")
