@@ -38,16 +38,14 @@ for i in data['result']['results']:
     testImages = i["file"]
     filter = re.compile(r'(https?://[^, "]*?\.(?:jpg|png|jpeg|JPG))')
     images = filter.findall(testImages)
+    filterImages = images[0:4]
     sqlinstruction = """
         INSERT INTO viewList (name,category,description,address,transport,mrt,latitude,longitude,images) 
         VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)
     """
-    viewData = (str(name),str(category),str(description),str(address),str(transport),str(mrt),latitude,longitude,str(images))
+    viewData = (str(name),str(category),str(description),str(address),str(transport),str(mrt),latitude,longitude,str(filterImages))
     # print(name,category,description,address,transport,mrt,latitude,longitude,images)
     cursor.execute(sqlinstruction,viewData)
     db.commit()
+    print(filterImages)
 print("新增成功")
-
-
-
-
