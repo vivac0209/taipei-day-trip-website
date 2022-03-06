@@ -26,120 +26,120 @@ def attractions():
 	page = int(request.args.get("page",0))
 	keyword = request.args.get("keyword",None)
 
-	# try:
+	try:
 		# 第一種狀況 page=0 & keyword=none
 		# keyword=none 所以page=0
-	if keyword == None:
-		sqlData = "SELECT COUNT(*) FROM `viewList`;" 
-		cursor.execute(sqlData)
-		TotalCount = cursor.fetchone()
-		cursor.reset()
-		# 抓出總數但型態是tuple
-		# print("總數:",TotalCount)
-		pageCount = TotalCount[0]//12
-		
-		if page > pageCount:
-			next_page = None
-		
-		elif page == pageCount:
-			next_page = None
-		else:
-			next_page = page+1
-			# viewList = None
-
-		pageCount = page*12
-		sqlAllDate = "SELECT * FROM `viewList` LIMIT %s, 12;" % pageCount
-		cursor.execute(sqlAllDate)
-		allResult = cursor.fetchall()
-		cursor.reset()
-		# print(type(allResult))
-			# 抓出景點資料list 存 {"nextPage":next_page, "data":[{data}]}
-		
-		viewList=[]
-		for i in allResult:
-			viewDict={}
-			viewDict["id"]=i[0]
-			viewDict["name"] = i[1]
-			viewDict["category"] = i[2]
-			viewDict["description"] = i[3]
-			viewDict["address"] = i[4]
-			viewDict["transport"] = i[5]
-			viewDict["mrt"] = i[6]
-			viewDict["latitude"] = i[7]
-			viewDict["longitude"] = i[8]
+		if keyword == None:
+			sqlData = "SELECT COUNT(*) FROM `viewList`;" 
+			cursor.execute(sqlData)
+			TotalCount = cursor.fetchone()
+			cursor.reset()
+			# 抓出總數但型態是tuple
+			# print("總數:",TotalCount)
+			pageCount = TotalCount[0]//12
 			
-			imageList =  i[9]
-			filter = re.compile(r'(https?://[^, "]*?\.(?:jpg|png|jpeg|JPG))')
-			arr = filter.findall(imageList)
-			arrResult=[]
-			for a in arr:
-				arrResult.append(a)
-				# print(type(arrResult))
-			print(arrResult)
-
-			viewDict["images"] = arrResult
-			viewList.append(viewDict)
-		
-		# print(viewDict["images"])
-		
-		#Responses
-		return jsonify({"nextPage":next_page, "data":viewList})
+			if page > pageCount:
+				next_page = None
 			
+			elif page == pageCount:
+				next_page = None
+			else:
+				next_page = page+1
+				# viewList = None
 
-		#keyword 有值 做景點搜尋
-	else:
-			#先抓資料 跳過幾筆 然後一次抓12筆
-		sqlSearch=f"SELECT * FROM `viewList` WHERE name LIKE '%{keyword}%' or '%{keyword}' or '{keyword}%' LIMIT {page*12}, 12;"
-		cursor.execute(sqlSearch)
-		searchResult = cursor.fetchall()
-		cursor.reset()
+			pageCount = page*12
+			sqlAllDate = "SELECT * FROM `viewList` LIMIT %s, 12;" % pageCount
+			cursor.execute(sqlAllDate)
+			allResult = cursor.fetchall()
+			cursor.reset()
+			# print(type(allResult))
+				# 抓出景點資料list 存 {"nextPage":next_page, "data":[{data}]}
 			
-		sqlCount =f"SELECT * FROM `viewList` WHERE name LIKE '%{keyword}%' or '%{keyword}' or '{keyword}%';"
-		cursor.execute(sqlCount)
-		sqlCountResult = cursor.fetchall()
-		print(type(sqlCountResult))
-		print(len(sqlCountResult))
-		cursor.reset()
-		
-		test = len(sqlCountResult)//12
-		if page < test:
-			next_page = page+1
-		elif test == 12:
-			next_page = None
-		else:
-			next_page = None
-
-			# 一樣的步驟
-		searchList=[]
-		for j in searchResult:
-			searchDict={}
-			searchDict["id"]=j[0]
-			searchDict["name"] = j[1]
-			searchDict["category"] = j[2]
-			searchDict["description"] = j[3]
-			searchDict["address"] = j[4]
-			searchDict["transport"] = j[5]
-			searchDict["mrt"] = j[6]
-			searchDict["latitude"] = j[7]
-			searchDict["longitude"] = j[8]
-
-			imageList1 = j[9]
-			filter = re.compile(r'(https?://[^, "]*?\.(?:jpg|png|jpeg|JPG))')
-			arr1 = filter.findall(imageList1)
-			arrResult1=[]
-			for b in arr1:
-				arrResult1.append(b)
+			viewList=[]
+			for i in allResult:
+				viewDict={}
+				viewDict["id"]=i[0]
+				viewDict["name"] = i[1]
+				viewDict["category"] = i[2]
+				viewDict["description"] = i[3]
+				viewDict["address"] = i[4]
+				viewDict["transport"] = i[5]
+				viewDict["mrt"] = i[6]
+				viewDict["latitude"] = i[7]
+				viewDict["longitude"] = i[8]
 				
-			searchDict["images"] = arrResult1
-			searchList.append(searchDict)
+				imageList =  i[9]
+				filter = re.compile(r'(https?://[^, "]*?\.(?:jpg|png|jpeg|JPG))')
+				arr = filter.findall(imageList)
+				arrResult=[]
+				for a in arr:
+					arrResult.append(a)
+					# print(type(arrResult))
+				# print(arrResult)
 
-		# print(searchList)
-			# Responses
-		return jsonify({"nextPage":next_page, "data":searchList})
+				viewDict["images"] = arrResult
+				viewList.append(viewDict)
+			
+			# print(viewDict["images"])
+			
+			#Responses
+			return jsonify({"nextPage":next_page, "data":viewList})
+				
 
-	# except:
-	# 	errorStauts="status"+'='+'500'
-	# 	return jsonify({"error": True, "message": "伺服器內部錯誤"}),errorStauts
+			#keyword 有值 做景點搜尋
+		else:
+				#先抓資料 跳過幾筆 然後一次抓12筆
+			sqlSearch=f"SELECT * FROM `viewList` WHERE name LIKE '%{keyword}%' or '%{keyword}' or '{keyword}%' LIMIT {page*12}, 12;"
+			cursor.execute(sqlSearch)
+			searchResult = cursor.fetchall()
+			cursor.reset()
+				
+			sqlCount =f"SELECT * FROM `viewList` WHERE name LIKE '%{keyword}%' or '%{keyword}' or '{keyword}%';"
+			cursor.execute(sqlCount)
+			sqlCountResult = cursor.fetchall()
+			print(type(sqlCountResult))
+			print(len(sqlCountResult))
+			cursor.reset()
+			
+			test = len(sqlCountResult)//12
+			if page < test:
+				next_page = page+1
+			elif test == 12:
+				next_page = None
+			else:
+				next_page = None
+
+				# 一樣的步驟
+			searchList=[]
+			for j in searchResult:
+				searchDict={}
+				searchDict["id"]=j[0]
+				searchDict["name"] = j[1]
+				searchDict["category"] = j[2]
+				searchDict["description"] = j[3]
+				searchDict["address"] = j[4]
+				searchDict["transport"] = j[5]
+				searchDict["mrt"] = j[6]
+				searchDict["latitude"] = j[7]
+				searchDict["longitude"] = j[8]
+
+				imageList1 = j[9]
+				filter = re.compile(r'(https?://[^, "]*?\.(?:jpg|png|jpeg|JPG))')
+				arr1 = filter.findall(imageList1)
+				arrResult1=[]
+				for b in arr1:
+					arrResult1.append(b)
+					
+				searchDict["images"] = arrResult1
+				searchList.append(searchDict)
+
+			# print(searchList)
+				# Responses
+			return jsonify({"nextPage":next_page, "data":searchList})
+
+	except:
+		errorStauts="status"+'='+'500'
+		return jsonify({"error": True, "message": "伺服器內部錯誤"}),errorStauts
 
 @app.route("/api/attraction/<attractionId>",methods=['GET'])
 def attractionsID(attractionId):
@@ -161,7 +161,15 @@ def attractionsID(attractionId):
 				IdData["mrt"]=x[6]
 				IdData["latitude"]=x[7]
 				IdData["longitude"]=x[8]
-				IdData["images"] = x[9]
+
+				imageList2 =  x[9]
+				filter = re.compile(r'(https?://[^, "]*?\.(?:jpg|png|jpeg|JPG))')
+				arr2 = filter.findall(imageList2)
+				arrResult2=[]
+				for c in arr2:
+					arrResult2.append(c)
+
+				IdData["images"] = arrResult2
 
 			DataMessage = jsonify({"data":IdData})
 			return DataMessage
