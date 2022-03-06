@@ -92,20 +92,17 @@ def attractions():
 			sqlSearch=f"SELECT * FROM `viewList` WHERE name LIKE '%{keyword}%' or '%{keyword}' or '{keyword}%' LIMIT {page*12}, 12;"
 			cursor.execute(sqlSearch)
 			searchResult = cursor.fetchall()
-			cursor.reset()
 				
-			sqlCount =f"SELECT * FROM `viewList` WHERE name LIKE '%{keyword}%' or '%{keyword}' or '{keyword}%';"
+			sqlCount =f"SELECT COUNT(*) FROM `viewList` WHERE name LIKE '%{keyword}%' OR '%{keyword}' OR '{keyword}%';"
 			cursor.execute(sqlCount)
 			sqlCountResult = cursor.fetchall()
-			print(type(sqlCountResult))
-			print(len(sqlCountResult))
-			cursor.reset()
 			
-			test = len(sqlCountResult)//12
-			if page < test:
+			# print(type(sqlCountResult))
+			# print(sqlCountResult[0][0])
+			cursor.reset()
+			sreuslt = (sqlCountResult[0][0])//12
+			if page < sreuslt:
 				next_page = page+1
-			elif test == 12:
-				next_page = None
 			else:
 				next_page = None
 
