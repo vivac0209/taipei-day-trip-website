@@ -48,4 +48,5 @@ for i in data['result']['results']:
     cursor.execute(sqlinstruction,viewData)
     db.commit()
     print(filterImages)
+
 print("新增成功")
