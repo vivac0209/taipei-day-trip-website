@@ -320,4 +320,14 @@ table {
         width: 300px;
         height: 80%;
     }
+    .Title{
+        font-size: 10px;
+        letter-spacing: 1em;
+    }
+    .Mrt{
+        font-size: 8px;
+    }
+    .Category{
+        font-size: 8px;
+    }
 }
