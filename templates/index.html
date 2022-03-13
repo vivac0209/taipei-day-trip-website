@@ -4,33 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styleIndex.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Index</title>
+    <link href="static/styleIndex.css" rel="stylesheet">
 </head>
 <body>
     <div class="wrap">
         <div class="header">
             <h3 class="headerTitle">台北一日遊</h3>
             <ul class="functionMenu">
-                <li>預定行程</li>
-                <li>登入/註冊</li>
+                <li><a htrf=#>預定行程</a></li>
+                <li><a htrf=#>登入/註冊</a></li>
             </ul>
         </div>
+        
         <div class="banner">
-            <div class="queryArea">
-                <h1 class="bannerTitle">輕鬆享受台北一日遊</h1>
-                <p>探索每個角落，體驗城市的深度旅遊行程</p>
-                <input type="text" id="queryView" value="輸入景點名稱查詢">
-                <button id="queryButton"><img src="https://i.imgur.com/MFdZhYo.png"></button>
+            <div class="scoendBanner">
+                <div class="queryArea">
+                    <h1 class="bannerTitle">輕鬆享受台北一日遊</h1>
+                    <p>探索每個角落，體驗城市的深度旅遊行程</p>
+                    <div class="searchArea">
+                        <div algin="left">
+                            <input type="text" id="queryView" placeholder="輸入景點名稱查詢">
+                        </div>
+                        <div algin="right">
+                            <button id="queryButton"><img src="static/images/icon_search.png"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bigImage">
+                    <img src="static/images/welcome.png">
+                </div>
             </div>
-            <div class="bigImage">
-                <img src="https://i.imgur.com/hZdO31Q.png">
-            </div>
+            
         </div>
-        <div class="content"></div>
+        
+        <div class="content">
+            <div class="boxArea" id="boxArea">
+                
+        </div>
+        
         <div class="footer">
             <p>COPYRIGHT © 2021 台北一日遊</p>
         </div>
     </div>
+    <script src="static/index.js" ></script>
 </body>
 </html>
