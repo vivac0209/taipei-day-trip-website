@@ -1,0 +1,333 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+.body{
+    font-family: Noto Sans TC;
+    font-style: normal;
+}
+
+.header {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.headerTitle{
+    color:#448899;
+    font-size: 30px;
+    line-height: 34px;
+    font-weight: bold;
+    padding-left: 30px;
+}
+.functionMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 30px;
+}
+.functionMenu li {
+    color: #666666;
+    font-size: 16px;
+    padding-left: 14px;
+    line-height: 13px;
+}
+
+.banner {
+    background: linear-gradient(135deg, #AADDEE 0%, #66AABB 100%);
+    height: 320px;
+}
+.scoendBanner{
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.queryArea {
+    padding-left: 30px;
+}
+.bannerTitle {
+    padding-top: 85px;
+}
+.queryArea h1{
+    font-size: 28px;
+    color: #F8F8F8;
+    line-height: 24px;
+}
+.queryArea p{
+    font-size: 16px;
+    line-height: 13px;
+    color: #F8F8F8;
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+.searchArea {
+    display: flex;
+    padding-bottom: 86px;
+}
+.searchArea input{
+    width: 400px;
+    height: 46px;
+    float:left;
+    border-width: 0px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    font-size: 16px;
+    color: #757575;
+    font-weight: bold;
+    padding-left: 10px;
+}
+.searchArea button{
+    width: 60px;
+    height: 46px;
+    background: #448899;
+    float: right;
+    border:none;
+    border-top-right-radius:8px;
+    border-bottom-right-radius:8px;
+}
+.bigImage{
+    max-width: 100%;
+}
+.content{
+    padding-top: 55px;
+}
+
+.boxArea {
+    max-width: 1200px;
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    
+}
+.viewBox {
+    width: 270px;
+    height: 242px;
+    border: 1px solid #E8E8E8;
+    border-radius:5px;
+    margin-bottom: 30px;
+}
+.img{
+    width: 100%;
+    aspect-ratio:16/9;
+}
+.Title{
+    color: #757575;
+    font-size: 16px;
+    line-height: 13px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-top: 15px;
+}
+.viewText{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px 12px 10px;
+}
+.Mrt{
+    font-size: 16px;
+    line-height: 13px;
+    color: #757575;
+}
+.Category{
+    font-size: 16px;
+    line-height: 13px;
+    color: #757575;
+}
+.footer{
+    height: 104px;
+    background:#757575;
+    display: flex;
+    align-items: center;
+}
+.footer p{
+    font-size: 16px;
+    color:#FFFFFF;
+    align-items: center;
+    margin:0 auto;
+}
+@media (max-width:1200px){
+    .header{
+        
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .scoendBanner{
+        margin: 0 auto;
+        width: 100%;
+        position: relative;
+    }
+    .queryArea{
+        z-index: 1;
+    }
+    .bigImage {
+        position: absolute;
+        right: 20px;
+        
+    }
+    .boxArea{
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: space-around;
+    }
+    .viewBox{
+        width: 40%;
+        height: 30%;
+    }
+    
+}
+@media (max-width:800px){
+    .scoendBanner{
+        position: relative;
+        margin: 0 auto;
+        height: 100%;
+        overflow:hidden;
+    }
+    .queryArea{
+        z-index: 1;
+    }
+    .bigImage{
+        position: absolute;
+        right: 0px;
+        bottom:0px;
+    }
+    .bigImage img{
+        max-width: 450px;
+        max-height: 450px;
+    }
+    .searchArea input{
+        max-width: 230px;
+        max-height: 46px;
+    }
+    .searchArea button{
+        max-width: 60px;
+        max-height: 46px;
+    }
+}
+@media (max-width:360px){
+    .header {
+        display: flex;
+        align-items: center;
+    }
+    .header h3{
+        font-size: 22px;
+    }
+    .functionMenu li{
+        font-size: 10px;
+    }
+    .banner{
+        height: 100%;
+    }
+    .scoendBanner{
+        position: relative;
+        margin: 0 auto;
+        overflow:hidden;
+    }
+    .queryArea{
+        width: 100%;
+        height: 100%;
+        
+    }
+    .bigImage{
+        position: absolute;
+        right: 0px;
+        bottom:0px;
+    }
+    .bigImage img{
+        max-width: 250px;
+        max-height: 150px;
+    }
+    .bannerTitle {
+        font-size: 26px;
+        padding-bottom: 20px;
+    }
+    .queryArea p{
+        font-size: 16px;
+    }
+    .bigImage {
+        position: absolute;
+        bottom:0px;
+        right: -90px;
+    }
+    .bigImage img{
+        max-width: 320px;
+        max-height: 300px;
+    }
+    .searchArea input{
+        max-width: 230px;
+        max-height: 46px;
+    }
+    .searchArea button{
+        max-width: 60px;
+        max-height: 46px;
+    }
+    .boxArea{
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+    }
+    .viewBox{
+        width: 300px;
+        height: 80%;
+    }
+    .Title{
+        font-size: 10px;
+        letter-spacing: 1em;
+    }
+    .Mrt{
+        font-size: 8px;
+    }
+    .Category{
+        font-size: 8px;
+    }
+}
