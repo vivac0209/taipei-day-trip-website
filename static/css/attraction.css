@@ -94,12 +94,12 @@ table {
     position: relative;
 }
 .pic {
-    width: 600px;
+    width: 550px;
     height: 330px;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 5px;
-    padding-right: 30px;
+    padding-right: 20px;
 }
 .leftArrow{
     position: absolute;
@@ -128,13 +128,13 @@ table {
     padding-bottom: 16px;
 }
 .function{
-    width: 650px;
+    width: 550px;
     border-radius: 5px;
     padding-bottom: 16px;
-    padding-left: 30px;
+    padding-left: 20px;
 }
 .infornation{
-    max-width: 680px;
+    max-width: 650px;
     background: #E8E8E8;
     border-radius: 5px;
     height: 80%;
@@ -214,10 +214,10 @@ table {
 }
 .line2{
     border: 1px solid #E8E8E8;
-    width: 1200px;
+    width: 1190px;
 }
 .introduceArea{
-    max-width: 1200px;
+    max-width: 1190px;
     margin: 0 auto;
     padding-top: 16px;
     margin-bottom: 60px;
@@ -248,7 +248,7 @@ table {
     
 }
 .traffic{
-    padding-bottom: 40px;
+    padding-bottom: 120px;
 }
 .traffic h4{
     color: #666666;
@@ -394,7 +394,7 @@ table {
         padding-bottom: 10px;
     }
     .traffic{
-        padding-bottom: 60px;
+        padding-bottom: 130px;
     }
     .line2{
         border: 1px solid #E8E8E8;
