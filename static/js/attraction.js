@@ -46,7 +46,7 @@ function getaAttraction(){
             selectAction();
             /*images 陣列*/
             
-            showImagesButton();
+            showImagesButton(AttractionData);
             imageBuuton(AttractionData);
             
         })
@@ -74,8 +74,8 @@ function selectAction(){
 
 }
     
-function showImagesButton(){
-    
+function showImagesButton(AttractionData){
+    let imagwsALL = AttractionData.images;
     let imagesBox = document.querySelector(".images");
     /*當滑鼠經過 才顯示按鈕*/
     let leftArrow = document.querySelector(".leftArrow");
@@ -88,31 +88,68 @@ function showImagesButton(){
         leftArrow.style.display = 'none';
         rightArrow.style.display = 'none';
     })
-    /*動態生成小圓圈 最後寫*/
-
+    
 }
 
 
 function imageBuuton(AttractionData){
+    let ImagesLength = AttractionData.images.length;
     let ImagesData = AttractionData.images;
+    let ballArea = document.getElementById("ballArea");
+    for (let j = 0; j < ImagesLength; j++){
+        let ball = document.createElement("div");
+        ball.setAttribute("class","ball");
+        ball.id ="dev"+j
+        ballArea.appendChild(ball);
+    }
+
+    
     let rightButton = document.getElementById("rightArrow");
     let leftButton = document.getElementById("leftArrow");
     let picIndex = document.getElementById("pic");
-
+    
     let index = 0;
+    
+    document.getElementById("dev"+0).style.backgroundColor="black";
+    
+    
     leftButton.onclick =  function(){
         index--;
         if (index < 0 ){
-            index = ImagesData.length -1;
+            index = ImagesLength -1;
         }
         picIndex.style.backgroundImage = 'url(' + ImagesData[index] + ')';
+        console.log("第"+index+"張");
+        console.log("左");
+        for (let a =0;a <ImagesLength ;a++){
+            if (index == a){
+                document.getElementById("dev"+index).style.backgroundColor = "black";
+            }
+            else {
+                document.getElementById("dev"+a).style.backgroundColor = "white";
+            }
+        }
+        
     }
+
     rightButton.onclick =  function(){
         index++;
-        if (index > ImagesData.length -1){
+        if (index > ImagesLength -1){
             index = 0;
         }
         picIndex.style.backgroundImage = 'url(' + ImagesData[index] + ')';
+        console.log("第"+index+"張");
+        console.log("右");
+        for (let b =0;b <ImagesLength ;b++){
+            if (index == b){
+                str = "dev"+b;
+                document.getElementById(str).style.backgroundColor = "black";
+            }
+            else {
+                document.getElementById("dev"+b).style.backgroundColor = "white";
+            }
+        }
+        
 
     }
 }
