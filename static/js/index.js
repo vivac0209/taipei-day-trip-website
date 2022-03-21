@@ -94,22 +94,26 @@ function createDiv(viewData,nextPage){
     let dataLength = Object.keys(viewData).length;
     let boxArea = document.getElementsByClassName("boxArea");
     for (let i=0;i<dataLength;i++){
+        
+        let viewId = viewData[i].id;
         let viewImg = viewData[i].images[0];
         let viewTitle = viewData[i].name;
         let viewMrt = viewData[i].mrt;
         let viewCategory = viewData[i].category;
 
-        let viewBox = document.createElement("div");
-        viewBox.setAttribute('class','viewBox');
-        document.querySelector(".boxArea").appendChild(viewBox);
+        let idLink = document.createElement("a");
+        idLink.setAttribute('class','viewBox');
+        let idUrl = `/attraction/${viewId}`;
+        idLink.setAttribute("href",idUrl);
+        document.querySelector(".boxArea").appendChild(idLink);
 
         let pic = document.createElement("div");
         pic.setAttribute('class','pic');
-        viewBox.appendChild(pic);
+        idLink.appendChild(pic);
 
         let viewText = document.createElement("div");
         viewText.setAttribute('class','viewText');
-        viewBox.appendChild(viewText);
+        idLink.appendChild(viewText);
 
         let Img = document.createElement("img");
         Img.setAttribute('class','img');
