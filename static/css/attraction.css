@@ -85,7 +85,7 @@ table {
 .content{
     max-width: 1200px;
     display: flex;
-    justify-content:space-between;
+    justify-content:center;
     margin: 0 auto;
     padding-top: 12px;
     padding-bottom: 12px;
@@ -94,12 +94,13 @@ table {
     position: relative;
 }
 .pic {
-    width: 550px;
+    width: 570px;
     height: 330px;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 5px;
-    padding-right: 20px;
+    margin-right: 20px;
+    
 }
 .leftArrow{
     position: absolute;
@@ -110,7 +111,7 @@ table {
 }
 .rightArrow{
     position: absolute;
-    right:5px;
+    right:25px;
     top:50%;
     background-color: Transparent;
     border: none;
@@ -147,10 +148,10 @@ table {
     padding-bottom: 16px;
 }
 .function{
-    width: 550px;
+    width: 570px;
     border-radius: 5px;
     padding-bottom: 16px;
-    padding-left: 20px;
+    margin-right: 20px;
 }
 .infornation{
     max-width: 650px;
@@ -185,16 +186,47 @@ table {
     padding-top: 24px;
     padding-bottom: 20px;
     padding-left: 20px;
+    background-color: #E8E8E8;
+}
+.radioBoxH4{
     color: #666666;
     font-weight: 700;
     font-size: 16px;
     line-height: 13px;
 }
-.radio{
+.Rtext{
+    color: #666666;
     font-size: 16px;
     line-height: 13px;
     font-weight: 400;
 }
+input[type='radio']:after{
+    width: 18px;
+    height: 18px;
+    border-radius: 19px;
+    top: -2px;
+    left: -2px;
+    position: relative;
+    background-color: #FFFFFF;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #FFFFFF;
+}
+input[type='radio']:checked:after {
+    width: 18px;
+    height: 18px;
+    border-radius: 19px;
+    top: -2px;
+    left: -2px;
+    position: relative;
+    background-color: #448899;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #FFFFFF;
+}
+
 .amount{
     padding-left: 20px;
     padding-bottom: 22px;
@@ -216,11 +248,12 @@ table {
 .button{
     padding-left: 20px;
     padding-bottom: 12px;
+    
 }
 .checkBtn{
     width: 154px;
     height: 36px;
-    color: #FFFFFF;
+    color: white;
     font-weight: 400;
     font-size: 19px;
     line-height: 16px;
@@ -233,10 +266,10 @@ table {
 }
 .line2{
     border: 1px solid #E8E8E8;
-    width: 1190px;
+    width: 1180px;
 }
 .introduceArea{
-    max-width: 1190px;
+    max-width: 1180px;
     margin: 0 auto;
     padding-top: 16px;
     margin-bottom: 60px;
@@ -358,11 +391,11 @@ table {
         font-weight: 700;
         padding-left: 16px;
     }
-    .radio{
+    /* .radio{
         font-size: 14px;
         line-height: 150%;
         font-weight: 400;
-    }
+    } */
     .radioBox{
         padding-top: 14px;
         padding-bottom: 10px;
@@ -620,11 +653,11 @@ table {
         font-weight: 700;
         
     }
-    .radio{
+    /* .radio{
         font-size: 14px;
         line-height: 150%;
         font-weight: 400;
-    }
+    } */
     .radioBox{
         padding-top: 18px;
         padding-bottom: 10px;
@@ -633,6 +666,9 @@ table {
         font-size: 14px;
         line-height: 150%;
     }
+    
+ 
+
     .amount{
         padding-bottom: 20px;
     }
