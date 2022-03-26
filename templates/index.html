@@ -8,45 +8,93 @@
     <link href="../static/css/styleIndex.css" rel="stylesheet">
 </head>
 <body>
-    <div class="wrap">
-        <div class="header">
-            <h3 class="headerTitle">台北一日遊</h3>
-            <ul class="functionMenu">
-                <li><a htrf=#>預定行程</a></li>
-                <li><a htrf=#>登入/註冊</a></li>
-            </ul>
-        </div>
-        
-        <div class="banner">
-            <div class="scoendBanner">
-                <div class="queryArea">
-                    <h1 class="bannerTitle">輕鬆享受台北一日遊</h1>
-                    <p>探索每個角落，體驗城市的深度旅遊行程</p>
-                    <div class="searchArea">
-                        <div algin="left">
-                            <input type="text" id="queryView" placeholder="輸入景點名稱查詢">
+    <div class="wrap" id="wrap">
+        <div class="layer" id="layer">
+            <div class="header">
+                <h3 class="headerTitle">台北一日遊</h3>
+                <ul class="functionMenu">
+                    <li><div class="Booking">預定行程</div></li>
+                    <li><div class="navlogin" id="navlogin" >登入/註冊</div></li>
+                    <li><div class="logout" id="logout">登出系統</div></li>
+                </ul>
+            </div>
+            <div class="login" id="login">
+                <div class="loginBox">
+                    <div class="loginClose" id="loginClose"><img src="../static/images/icon_close.png" alt=""></div>
+                    <div class="navbar"></div>
+                    <h2 class="loginH2">登入會員帳號</h2>
+                    <from class="loginFrom" action="/singup" method="PATCH">
+                        <div class="loginEmail">
+                            <input type="email" placeholder="輸入電子信箱" id="loginEmail" class="LEmail" name="loginEmail">
                         </div>
-                        <div algin="right">
-                            <button id="queryButton"><img src="static/images/icon_search.png"></button>
+                        <div  class="loginPws">
+                            <input type="password" placeholder="輸入密碼" id="loginPws" class="LPws" name="loginPws">
                         </div>
-                    </div>
-                </div>
-                <div class="bigImage">
-                    <img src="static/images/welcome.png">
+                        <div class="GroupBtn">
+                            <button class="loginbtn" id="loginbtn">登入帳戶</button>
+                        </div>
+                        <div class="loginMsg" id="loginMsg"></div>
+                        <div class="gotoSignup" id="gotoSignup">還沒有帳戶嗎? 點此註冊</div>
+                    </from>
                 </div>
             </div>
             
-        </div>
-        
-        <div class="content">
-            <div class="boxArea" id="boxArea">
+            <div class="signup" id="signup">
+                <div class="signupBox">
+                    <div class="signupClose" id="signupClose"><img src="../static/images/icon_close.png" alt=""></div>
+                    <div class="navbar"></div>
+                    <h2 class="loginH2">註冊會員帳號</h2>
+                    <from class="signupForm" action="/singup" method="POST">
+                        <div class="signupName">
+                            <input type="text" placeholder="輸入姓名" id="signupName" class="sName" name="signupName">
+                        </div>
+                        <div class="signupEmail">
+                            <input type="text" placeholder="輸入電子信箱" id="signupEmail" class="sEmail" name="signupEmail">
+                        </div>
+                        <div class="signupPws">
+                            <input type="text" placeholder="輸入密碼" id="signupPws" class="sPws" name="signupPws">
+                        </div>
+                        <div class="signupBtn">
+                            <button class="sbtn" id="sbtn">註冊新帳戶</button>
+                        </div>
+                        <div class="signupMsg" id="signupMsg"></div>
+                        <div class="gotoLogin" id="gotoLogin">已經有帳戶了? 點此登入</div>
+                    </from>
+                </div>
+            </div>
+    
+            <div class="banner" id="banner">
+                <div class="scoendBanner">
+                    <div class="queryArea">
+                        <h1 class="bannerTitle">輕鬆享受台北一日遊</h1>
+                        <p>探索每個角落，體驗城市的深度旅遊行程</p>
+                        <div class="searchArea">
+                            <div algin="left">
+                                <input type="text" id="queryView" placeholder="輸入景點名稱查詢">
+                            </div>
+                            <div algin="right">
+                                <button id="queryButton"><img src="static/images/icon_search.png"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bigImage">
+                        <img src="static/images/welcome.png">
+                    </div>
+                </div>
                 
-        </div>
-        
-        <div class="footer">
-            <p>COPYRIGHT © 2021 台北一日遊</p>
+            </div>
+            
+            <div class="content" id="content">
+                <div class="boxArea" id="boxArea">
+                    
+            </div>
+            
+            <div class="footer" id="footer">
+                <p>COPYRIGHT © 2021 台北一日遊</p>
+            </div>
         </div>
     </div>
+        
     <script src="static/js/index.js" ></script>
 </body>
 </html>
