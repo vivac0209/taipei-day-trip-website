@@ -150,9 +150,10 @@ searchBtn.addEventListener('click',() => {
 
 let navLogin = document.getElementById("navlogin");
 
+
 navLogin.addEventListener('click',() => {
     document.getElementById("login").style.display = "block";
-
+    document.getElementById("background").style.display = "block";
 })
 
 /*註冊 */
@@ -175,13 +176,14 @@ gotoLogin.addEventListener('click',() => {
 let closedBtn = document.getElementById("loginClose");
 closedBtn.addEventListener('click',() => {
     document.getElementById("login").style.display = "none";
+    document.getElementById("background").style.display = "none";
    
 })
 /*關閉註冊視窗 */
 let signupClose = document.getElementById("signupClose");
 signupClose.addEventListener('click',() => {
-    
     document.getElementById("signup").style.display = "none";
+    document.getElementById("background").style.display = "none";
 })
 
 /* 收集登入資料*/
@@ -283,9 +285,10 @@ function signipAction(signupName,signupEmail,signupPws){
 let checkUrl='/api/user';
     
 let logout = document.getElementById("logout");
-let logignFrom = document.getElementById("login");
+let logoutBtn = document.getElementById("logout");
 
-fetch(checkUrl,{method: "GET"})
+function queryState(){
+    fetch(checkUrl,{method: "GET"})
     .then((res)=> {
         return res.json();
     })
@@ -294,32 +297,26 @@ fetch(checkUrl,{method: "GET"})
         if (result["data"] != null){
             navLogin.style.display = "none";
             logout.style.display = "block";
-            logignFrom.style.display = "none";
+            // logignFrom.style.display = "none";
 
         }else{
-             navLogin.style.display = "block";
+            navLogin.style.display = "block";
             logout.style.display = "none";
         }
+    })
+}
+
+queryState();
+
+logoutBtn.addEventListener('click',function(){
+    let logoutkUrl='/api/user';
+    fetch(logoutkUrl,{method: "DELETE"})
+        .then((res)=> {
+            return res.json();
+         })
+        .then((result)=>{
+            if (result["ok"]){
+            location.reload();
+            }
+        })
 })
-
-
-
-
-/*登出 */
-// let logoutBtn = document.getElementById("logout");
-
-// logoutBtn.addEventListener('click',() => {
-//     let logoutkUrl='/api/user';
-
-//     fetch(logoutkUrl,{method: "DELETE"})
-//         .then((res)=> {
-//             return res.json();
-//         })
-//         .then((result)=>{
-//             if (result["ok"]){
-//                 document.location.pathname='/'
-//                 // logoutBtn.style.display = "none";
-//                 // navLogin.style.display = "block";
-//             }
-//         })
-// })

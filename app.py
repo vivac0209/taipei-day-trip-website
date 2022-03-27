@@ -17,7 +17,7 @@ db = mysql.connector.connect(
   database = "TaipeiData",
 )
 
-cursor = db.cursor(buffered=True)
+cursor = db.cursor()
 print("連線成功")
 
 # 註冊
@@ -27,39 +27,33 @@ def signup():
 	regName = regData['name']
 	regEmail = regData['email']
 	regrPws = regData['password']
+	print(regName,regEmail,regrPws)
 
-	# try:
-	sqlActionQuery =  "SELECT * FROM `memberList` WHERE 'email'= '%s' " % regEmail
-	cursor.execute(sqlActionQuery)
-	searchEmail = cursor.fetchone()
+	try:
+		sqlActionQuery =  "SELECT * FROM `memberList` WHERE `email`= '%s' " % regEmail
+		cursor.execute(sqlActionQuery)
+		searchEmail = cursor.fetchone()
+		print(searchEmail)
 
-	if searchEmail != None:
-		cursor.reset()
-		print("信箱已被註冊")
-		return jsonify({"error":True,"message":"信箱已被註冊"})
-			
-	else:
-		sqlActionAdd = """
-		INSERT INTO `memberList` (name,email,password)
-		VALUES(%s,%s,%s);
-		"""
-		sqlValue = (regName,regEmail,regrPws)
-		cursor.execute(sqlActionAdd,sqlValue)
-		db.commit()
-		cursor.reset()
-			
-		print("新增成功")
-
-		sqlidQuery =  "SELECT * FROM `memberList` WHERE 'name'= '%s' " % regName
-		cursor.execute(sqlidQuery)
-		searchid = cursor.fetchone()
-		print(searchid)
-		session["id"] = searchid[0]
-		session["name"] = regName
-		session["email"] = regEmail
-		return jsonify({"ok": True})
-	# except:
-	# 	return jsonify({"error":True,"message":"伺服器內部錯誤"})
+		if searchEmail != None:
+			cursor.reset()
+			print("信箱已被註冊")
+			return jsonify({"error":True,"message":"信箱已被註冊"})
+					
+		else:
+			sqlActionAdd = """
+			INSERT INTO `memberList` (name,email,password)
+			VALUES(%s,%s,%s);
+			"""
+			sqlValue = (regName,regEmail,regrPws)
+			cursor.execute(sqlActionAdd,sqlValue)
+			db.commit()
+			cursor.reset()
+					
+			print("新增成功")
+			return jsonify({"ok": True})
+	except:
+		return jsonify({"error":True,"message":"伺服器內部錯誤"})
 #登入
 @app.route("/api/user",methods=['PATCH'])
 def Login():
@@ -114,9 +108,9 @@ def checkLogin():
 
 @app.route("/api/user",methods=['DELETE'])
 def Logout():
-	session['id'] = None
-	session['name'] = None
-	session['email'] = None
+	session.pop("id", None)
+	session.pop("name", None)
+	session.pop("email", None)
 	return jsonify({"ok":True})
 
 ###############################################################
@@ -297,6 +291,6 @@ def thankyou():
 	return render_template("thankyou.html")
 
 
-# app.run(host='0.0.0.0', port=3000)
-if __name__ == '__main__':
-	app.run()
+app.run(host='0.0.0.0', port=3000)
+# if __name__ == '__main__':
+# 	app.run()

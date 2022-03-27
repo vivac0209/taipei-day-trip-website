@@ -48,6 +48,8 @@ table {
 .body{
     font-family: Noto Sans TC;
     font-style: normal;
+    background-color:white;
+    
 }
 
 .header {
@@ -88,12 +90,24 @@ table {
 
 }
 
+.background{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    background-color: rgba(43, 39, 39, 0.5);
+    /* opacity: 0.5; */
+    display:none;
+    
+}
 
 /*做login*/
 .login{
-    position: absolute;
     display: none;
-    z-index: 3;
+    z-index: 200;
+    position:absolute;
 }
 
 .loginBox{
@@ -111,7 +125,7 @@ table {
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
-    /* z-index: 3; */
+    /* z-index: 30; */
     
 }
 .loginClose{
@@ -218,7 +232,10 @@ table {
 /*做signup*/
 .signup{
     display: none;
+    z-index: 200;
+    position:absolute;
 }
+
 .signupBox{
     position: fixed;
     top: 70px;
@@ -615,6 +632,18 @@ table {
     }
 }
 @media (max-width:360px){
+    .background{
+        width: 100%;
+        height: 70%;
+        position:absolute;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        background-color: rgba(43, 39, 39, 0.5);
+        /* opacity: 0.5; */
+        display:none;
+        
+    }
     .header {
         display: flex;
         align-items: center;
