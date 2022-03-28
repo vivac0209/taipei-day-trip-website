@@ -44,9 +44,12 @@ table {
 *,*::before,*::after{
     box-sizing: border-box;
 }
+
 .body{
     font-family: Noto Sans TC;
     font-style: normal;
+    background-color:white;
+    
 }
 
 .header {
@@ -82,7 +85,259 @@ table {
     background: linear-gradient(135deg, #AADDEE 0%, #66AABB 100%);
     height: 320px;
 }
+.navlogin{
+    cursor:pointer;
+}
+.logout{
+    display: none;
+    cursor:pointer;
+}
+
+.background{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    background-color: rgba(43, 39, 39, 0.5);
+    /* opacity: 0.5; */
+    display:none;
+    
+}
+
+/*做login*/
+.login{
+    display: none;
+    z-index: 200;
+    position:absolute;
+}
+
+.loginBox{
+    position: fixed;
+    top: 70px;
+    /* left:600px; */
+    left:50%;
+    transform: translate(-150px,0);
+    max-width: 340px;
+    box-shadow: 0px 4px 60px #AAAAAA;
+    border-radius: 8px;
+    background: #FFFFFF;
+    padding-bottom: 0 16px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    /* z-index: 30; */
+    
+}
+.loginClose{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top:32px;
+    right: 10px;
+    cursor:pointer;
+}
+.signupClose{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top:32px;
+    right: 10px;
+    cursor:pointer;
+}
+
+.navbar{
+    background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
+    width: 100%;
+    height: 16px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+}
+
+.loginH2{
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    color: #666666;
+    text-align: center;
+}
+.loginEmail{
+    padding-bottom: 16px;
+    
+}
+
+.LEmail{
+    border: 1px solid #CCCCCC;
+    border-radius:5px;
+    box-sizing: border-box;
+    width: 310px;
+    height: 40px;
+    padding-left:10px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #666666;
+}
+.loginPws{
+    padding-bottom: 16px;
+}
+.LPws{
+    border: 1px solid #CCCCCC;
+    border-radius:5px;
+    box-sizing: border-box;
+    width: 310px;
+    height: 40px;
+    padding-left:10px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #666666;
+}
+.GroupBtn{
+    padding-bottom: 8px;
+}
+.loginbtn{
+    width: 310px;
+    height: 42px;
+    border:none;
+    background: #448899;
+    border-radius: 5px;
+    font-weight: 300;
+    font-size: 19px;
+    color: #FFFFFF;
+    text-align: center;
+    cursor:pointer;
+}
+.loginMsg{
+    color:red;
+    font-size: 16px;
+    font-weight: 300;
+    padding-bottom: 16px;
+}
+.signupMsg{
+    color:red;
+    font-size: 16px;
+    font-weight: 300;
+    padding-bottom: 16px;
+}
+.gotoSignup{
+    width: 310px;
+    height: 22px;
+    text-align: center;
+    color: #666666;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 13px;
+    padding-bottom: 10px;
+    cursor:pointer;
+}
+
+/*做signup*/
+.signup{
+    display: none;
+    z-index: 200;
+    position:absolute;
+}
+
+.signupBox{
+    position: fixed;
+    top: 70px;
+    left:50%;
+    transform: translate(-150px,0);
+    max-width: 340px;
+    box-shadow: 0px 4px 60px #AAAAAA;
+    border-radius: 8px;
+    background: #FFFFFF;
+    padding-bottom: 0 16px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    z-index: 2;
+}
+
+.signupName{
+    padding-bottom: 16px;
+    
+}
+
+.sName{
+    border: 1px solid #CCCCCC;
+    border-radius:5px;
+    box-sizing: border-box;
+    width: 310px;
+    height: 40px;
+    padding-left:10px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #666666;
+}
+.signupEmail{
+    padding-bottom: 16px;
+}
+.sEmail{
+    border: 1px solid #CCCCCC;
+    border-radius:5px;
+    box-sizing: border-box;
+    width: 310px;
+    height: 40px;
+    padding-left:10px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #666666;
+}
+
+.signupPws{
+    padding-bottom: 16px;
+}
+.sPws{
+    border: 1px solid #CCCCCC;
+    border-radius:5px;
+    box-sizing: border-box;
+    width: 310px;
+    height: 40px;
+    padding-left:10px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #666666;
+}
+
+.signupBtn{
+    padding-bottom: 18px;
+}
+.sbtn{
+    width: 310px;
+    height: 42px;
+    border:none;
+    background: #448899;
+    border-radius: 5px;
+    font-weight: 300;
+    font-size: 19px;
+    color: #FFFFFF;
+    text-align: center;
+    cursor:pointer;
+}
+.gotoLogin{
+    width: 310px;
+    height: 22px;
+    text-align: center;
+    color: #666666;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 13px;
+    padding-bottom: 10px;
+    cursor:pointer;
+}
+.banner{
+    position: relative;
+}
+
+
 .scoendBanner{
+
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
@@ -130,11 +385,14 @@ table {
     border:none;
     border-top-right-radius:8px;
     border-bottom-right-radius:8px;
+    cursor:pointer;
 }
 .bigImage{
     max-width: 100%;
 }
 .content{
+    position: relative;
+
     padding-top: 55px;
 }
 
@@ -144,7 +402,7 @@ table {
     justify-content:space-between;
     flex-wrap: wrap;
     margin: 0 auto;
-    
+    cursor:pointer;
 }
 .viewBox {
     width: 270px;
@@ -184,6 +442,8 @@ table {
     color: #757575;
 }
 .footer{
+    position: relative;
+
     height: 104px;
     background:#757575;
     display: flex;
@@ -204,7 +464,22 @@ table {
         margin-left: auto;
         margin-right: auto;
     }
-
+    .loginBox{
+        position: fixed;
+        top: 70px;
+        left:50%;
+        /* transform: translate(-150px,0); */
+        max-width: 340px;
+        z-index: 2;
+    }
+    .signupBox{
+        position: fixed;
+        top: 70px;
+        left:50%;
+        /* transform: translate(-150px,0); */
+        max-width: 340px;
+        z-index: 2;
+    }
     .scoendBanner{
         margin: 0 auto;
         width: 100%;
@@ -236,6 +511,58 @@ table {
         height: 100%;
         overflow:hidden;
     }
+    .loginBox{
+        position: fixed;
+        top: 70px;
+        left:50%;
+        max-width: 340px;
+        z-index: 2;
+    }
+    .LEmail{
+        padding-left: 10px;
+        max-width:300px;
+        height: 40px;
+   
+    }
+    .LPws{
+        padding-left: 10px;
+        max-width:300px;
+        height: 40px;
+      
+    }
+    .loginbtn{
+        max-width:300px;
+        height: 42px;
+        padding-left: 10px;
+    }
+    .signupBox{
+        position: fixed;
+        top: 70px;
+        left:50%;
+        max-width: 340px;
+        z-index: 2;
+    }
+    .sName{
+        padding-left: 10px;
+        max-width:300px;
+        height: 40px;
+    }
+    .sEmail{
+        padding-left: 10px;
+        max-width:300px;
+        height: 40px;
+    }
+    .sPws{
+        padding-left: 10px;
+        max-width:300px;
+        height: 40px;
+    }
+    .sbtn{
+        max-width:300px;
+        height: 42px;
+        padding-left: 10px;
+    }
+
     .queryArea{
         z-index: 1;
     }
@@ -257,7 +584,75 @@ table {
         max-height: 46px;
     }
 }
+@media (max-width:700px){
+    .loginBox{
+        position: fixed;
+        top: 70px;
+        left:50%;
+        max-width: 350px;
+        z-index: 2;
+    }
+    .LEmail{
+        padding-left: 15px;
+        max-width:270px;
+        height: 40px;
+   
+    }
+    
+    .LPws{
+        padding-left: 15px;
+        max-width:270px;
+        height: 40px;
+      
+    }
+    .loginbtn{
+        max-width:270px;
+        height: 42px;
+        padding-left: 15px;
+    }
+    .signupBox{
+        position: fixed;
+        top: 70px;
+        left:50%;
+        max-width: 350px;
+        z-index: 2;
+    }
+    .sName{
+        position: fixed;
+        top: 70px;
+        left:50%;
+        max-width: 350px;
+        z-index: 2;
+    }
+    .sEmail{
+        padding-left: 15px;
+        max-width:270px;
+        height: 40px;
+    }
+    .sPws{
+        padding-left: 15px;
+        max-width:270px;
+        height: 40px;
+    }
+    .sbtn{
+        max-width:270px;
+        height: 42px;
+        padding-left: 15px;
+    }
+}
 @media (max-width:360px){
+    .background{
+        width: 100%;
+        height: 70%;
+        position:absolute;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        background-color: rgba(43, 39, 39, 0.5);
+        /* opacity: 0.5; */
+        display:none;
+        
+    }
     .header {
         display: flex;
         align-items: center;
@@ -267,6 +662,58 @@ table {
     }
     .functionMenu li{
         font-size: 10px;
+    }
+    .loginBox{
+        position: fixed;
+        top: 70px;
+        left: 163px;
+        width: 320px;
+        z-index: 2;
+    }
+    .LEmail{
+        padding-left: 15px;
+        max-width:280px;
+        height: 40px;
+   
+    }
+    
+    .LPws{
+        padding-left: 15px;
+        max-width:280px;
+        height: 40px;
+      
+    }
+    .loginbtn{
+        max-width:280px;
+        height: 42px;
+        padding-left: 15px;
+    }
+    .signupBox{
+        position: fixed;
+        top: 70px;
+        left: 163px;
+        width: 320px;
+        z-index: 2;
+    }
+    .sName{
+        padding-left: 15px;
+        max-width:280px;
+        height: 40px;
+    }
+    .sEmail{
+        padding-left: 15px;
+        max-width:280px;
+        height: 40px;
+    }
+    .sPws{
+        padding-left: 15px;
+        max-width:280px;
+        height: 40px;
+    }
+    .sbtn{
+        max-width:280px;
+        height: 42px;
+        padding-left: 15px;
     }
     .banner{
         height: 100%;

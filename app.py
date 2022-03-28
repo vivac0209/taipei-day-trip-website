@@ -1,13 +1,14 @@
 from flask import *
 import mysql.connector
 from mysql.connector import Error
+import pymysql
 import json
 import re
 
 app=Flask(__name__)
 app.config["JSON_AS_ASCII"]=False
 app.config["TEMPLATES_AUTO_RELOAD"]=True
-
+app.secret_key="qqqqq"
 #資料庫連線
 db = mysql.connector.connect(
   host="localhost",
@@ -19,7 +20,100 @@ db = mysql.connector.connect(
 cursor = db.cursor()
 print("連線成功")
 
+# 註冊
+@app.route("/api/user",methods=['POST'])
+def signup():
+	regData = request.get_json()
+	regName = regData['name']
+	regEmail = regData['email']
+	regrPws = regData['password']
+	print(regName,regEmail,regrPws)
 
+	try:
+		sqlActionQuery =  "SELECT * FROM `memberList` WHERE `email`= '%s' " % regEmail
+		cursor.execute(sqlActionQuery)
+		searchEmail = cursor.fetchone()
+		print(searchEmail)
+
+		if searchEmail != None:
+			cursor.reset()
+			print("信箱已被註冊")
+			return jsonify({"error":True,"message":"信箱已被註冊"})
+					
+		else:
+			sqlActionAdd = """
+			INSERT INTO `memberList` (name,email,password)
+			VALUES(%s,%s,%s);
+			"""
+			sqlValue = (regName,regEmail,regrPws)
+			cursor.execute(sqlActionAdd,sqlValue)
+			db.commit()
+			cursor.reset()
+					
+			print("新增成功")
+			return jsonify({"ok": True})
+	except:
+		return jsonify({"error":True,"message":"伺服器內部錯誤"})
+#登入
+@app.route("/api/user",methods=['PATCH'])
+def Login():
+	LoginData = request.get_json()
+
+	LoginEmail = LoginData['email']
+	LoginPws = LoginData['password']
+	# print(LoginEmail,LoginPws)
+
+	try:
+		sqlFound =  "SELECT * FROM `memberList` WHERE `email`= '%s'" % LoginEmail
+		cursor.execute(sqlFound)
+		emailResult = cursor.fetchone()
+		# print(emailResult)
+			
+		
+		if emailResult != None:
+			pwsData = emailResult[3]
+			# print(pwsData)
+			if pwsData == LoginPws:
+				# print("test")
+				session["email"] = LoginEmail
+				session["id"] = emailResult[0]
+				session["name"] = emailResult[1]
+					
+				cursor.reset()
+				return jsonify({"ok":True})
+			else:
+				cursor.reset()
+				return jsonify({"error":True,"message":"密碼輸入錯誤"})
+		else:
+			cursor.reset()
+			return jsonify({"error":True,"message":"找不到此帳號"})
+		
+	except:
+		return jsonify({"error":True,"message":"伺服器內部錯誤"})
+
+@app.route("/api/user",methods=['GET'])
+def checkLogin():
+
+	if "email" in session:
+		print("app test")
+		return jsonify(
+			{"data":
+			{	"id":session["id"],
+				"name":session["name"],
+				"email":session["email"],
+			}
+		})
+	else:
+		return jsonify({"data":None})
+
+@app.route("/api/user",methods=['DELETE'])
+def Logout():
+	session.pop("id", None)
+	session.pop("name", None)
+	session.pop("email", None)
+	return jsonify({"ok":True})
+
+###############################################################
 @app.route("/api/attractions",methods=['GET'])
 def attractions():
 	# 從網址上得到資料page 跟 keyword
@@ -197,6 +291,4 @@ def thankyou():
 	return render_template("thankyou.html")
 
 
-# app.run(host='0.0.0.0', port=3000)
-if __name__ == '__main__':
-	app.run(port=3000)
+app.run(host='0.0.0.0', port=3000)

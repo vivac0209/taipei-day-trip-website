@@ -12,10 +12,59 @@
         <div class="header">
             <h3 class="headerTitle">台北一日遊</h3>
             <ul class="functionMenu">
-                <li><a htrf=#>預定行程</a></li>
-                <li><a htrf=#>登入/註冊</a></li>
+                <li><div class="Booking">預定行程</div></li>
+                <li><div class="navlogin" id="navlogin" >登入/註冊</div></li>
+                <li><div class="logout" id="logout">登出系統</div></li>
             </ul>
         </div>
+
+        <div class="background" id="background"></div>
+        <div class="login" id="login">
+            <div class="loginBox">
+                <div class="loginClose" id="loginClose"><img src="../static/images/icon_close.png" alt=""></div>
+                <div class="navbar"></div>
+                <h2 class="loginH2">登入會員帳號</h2>
+                <from class="loginFrom" action="/singup" method="PATCH">
+                    <div class="loginEmail">
+                        <input type="email" placeholder="輸入電子信箱" id="loginEmail" class="LEmail" name="loginEmail">
+                    </div>
+                    <div  class="loginPws">
+                        <input type="password" placeholder="輸入密碼" id="loginPws" class="LPws" name="loginPws">
+                    </div>
+                    <div class="GroupBtn">
+                        <button class="loginbtn" id="loginbtn">登入帳戶</button>
+                    </div>
+                    <div class="loginMsg" id="loginMsg"></div>
+                    <div class="gotoSignup" id="gotoSignup">還沒有帳戶嗎? 點此註冊</div>
+                </from>
+            </div>
+        </div>
+        
+        <div class="signup" id="signup">
+            <div class="signupBox">
+                <div class="signupClose" id="signupClose"><img src="../static/images/icon_close.png" alt=""></div>
+                <div class="navbar"></div>
+                <h2 class="loginH2">註冊會員帳號</h2>
+                <from class="signupForm" action="/singup" method="POST">
+                    <div class="signupName">
+                        <input type="text" placeholder="輸入姓名" id="signupName" class="sName" name="signupName">
+                    </div>
+                    <div class="signupEmail">
+                        <input type="text" placeholder="輸入電子信箱" id="signupEmail" class="sEmail" name="signupEmail">
+                    </div>
+                    <div class="signupPws">
+                        <input type="password" placeholder="輸入密碼" id="signupPws" class="sPws" name="signupPws">
+                    </div>
+                    <div class="signupBtn">
+                        <button class="sbtn" id="sbtn">註冊新帳戶</button>
+                    </div>
+                    <div class="signupMsg" id="signupMsg"></div>
+                    <div class="gotoLogin" id="gotoLogin">已經有帳戶了? 點此登入</div>
+                </from>
+            </div>
+        </div>
+
+
         <hr / class="line">
         <div class="content">
             <div class="images">
@@ -37,7 +86,7 @@
                     <h4>訂購導覽行程</h4>
                     <p>以此景點為中心的一日行程，帶您探索城市角落故事</p>
                     <label class="data" for="date">選擇日期:</label>
-                    <input id="date" type="date">
+                    <input id="date" type="date" class="dataSelect">
                     <div class="radioBox">
                         <span class="radioBoxH4">選擇時間:</span>
                         
