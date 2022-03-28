@@ -85,9 +85,12 @@ table {
     background: linear-gradient(135deg, #AADDEE 0%, #66AABB 100%);
     height: 320px;
 }
+.navlogin{
+    cursor:pointer;
+}
 .logout{
     display: none;
-
+    cursor:pointer;
 }
 
 .background{
@@ -134,7 +137,7 @@ table {
     position: absolute;
     top:32px;
     right: 10px;
-    
+    cursor:pointer;
 }
 .signupClose{
     width: 16px;
@@ -142,6 +145,7 @@ table {
     position: absolute;
     top:32px;
     right: 10px;
+    cursor:pointer;
 }
 
 .navbar{
@@ -205,6 +209,7 @@ table {
     font-size: 19px;
     color: #FFFFFF;
     text-align: center;
+    cursor:pointer;
 }
 .loginMsg{
     color:red;
@@ -227,6 +232,7 @@ table {
     font-size: 16px;
     line-height: 13px;
     padding-bottom: 10px;
+    cursor:pointer;
 }
 
 /*做signup*/
@@ -312,6 +318,7 @@ table {
     font-size: 19px;
     color: #FFFFFF;
     text-align: center;
+    cursor:pointer;
 }
 .gotoLogin{
     width: 310px;
@@ -322,6 +329,7 @@ table {
     font-size: 16px;
     line-height: 13px;
     padding-bottom: 10px;
+    cursor:pointer;
 }
 .banner{
     position: relative;
@@ -377,6 +385,7 @@ table {
     border:none;
     border-top-right-radius:8px;
     border-bottom-right-radius:8px;
+    cursor:pointer;
 }
 .bigImage{
     max-width: 100%;
@@ -393,7 +402,7 @@ table {
     justify-content:space-between;
     flex-wrap: wrap;
     margin: 0 auto;
-    
+    cursor:pointer;
 }
 .viewBox {
     width: 270px;

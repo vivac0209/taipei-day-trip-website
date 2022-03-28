@@ -54,9 +54,13 @@ table {
     align-items: center;
     height: 100%;
 }
+.navlogin{
+    cursor:pointer;
+}
 
 .logout{
     display: none;
+    cursor:pointer;
 }
 .background{
     width: 100%;
@@ -101,7 +105,7 @@ table {
     position: absolute;
     top:32px;
     right: 10px;
-    
+    cursor:pointer;
 }
 .signupClose{
     width: 16px;
@@ -109,6 +113,7 @@ table {
     position: absolute;
     top:32px;
     right: 10px;
+    cursor:pointer;
 }
 .navbar{
     background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
@@ -171,6 +176,7 @@ table {
     font-size: 19px;
     color: #FFFFFF;
     text-align: center;
+    cursor:pointer;
 }
 .loginMsg{
     color:red;
@@ -193,6 +199,7 @@ table {
     font-size: 16px;
     line-height: 13px;
     padding-bottom: 10px;
+    cursor:pointer;
 }
 /*做signup*/
 .signup{
@@ -277,6 +284,7 @@ table {
     font-size: 19px;
     color: #FFFFFF;
     text-align: center;
+    cursor:pointer;
 }
 .gotoLogin{
     width: 310px;
@@ -287,6 +295,7 @@ table {
     font-size: 16px;
     line-height: 13px;
     padding-bottom: 10px;
+    cursor:pointer;
 }
 .header {
     max-width: 1200px;
@@ -340,6 +349,7 @@ table {
     top:50%;
     background-color: Transparent;
     border: none;
+    cursor:pointer;
 }
 .rightArrow{
     position: absolute;
@@ -347,6 +357,7 @@ table {
     top:50%;
     background-color: Transparent;
     border: none;
+    cursor:pointer;
 }
 .ballArea{
     
@@ -414,6 +425,9 @@ table {
     font-weight: 700;
     padding-left: 20px;
 }
+.dataSelect{
+    cursor:pointer;
+}
 .radioBox{
     padding-top: 24px;
     padding-bottom: 20px;
@@ -431,6 +445,7 @@ table {
     font-size: 16px;
     line-height: 13px;
     font-weight: 400;
+    
 }
 input[type='radio']:after{
     width: 18px;
@@ -492,6 +507,7 @@ input[type='radio']:checked:after {
     background: #448899;
     border-radius: 5px;
     border:none;
+    cursor:pointer;
 }
 .line1{
     border: 1px solid #E8E8E8;
