@@ -317,23 +317,16 @@ function queryState(){
 queryState();
 
 logoutBtn.addEventListener('click',function(){
-    
-    fetch(checkUrl,{method: "GET"})
-    .then((res)=> {
-        return res.json();
-    })
-    .then((result)=>{
-        console.log("tset");
-        if (result["data"] != null){
-            navLogin.style.display = "none";
-            logout.style.display = "block";
-            // logignFrom.style.display = "none";
-
-        }else{
-            navLogin.style.display = "block";
-            logout.style.display = "none";
-        }
-    })
+    let logoutkUrl='/api/user';
+    fetch(logoutkUrl,{method: "DELETE"})
+        .then((res)=> {
+            return res.json();
+         })
+        .then((result)=>{
+            if (result["ok"]){
+            location.reload();
+            }
+        })
 })
 
 let navBooking = document.getElementById("Booking")

@@ -140,13 +140,13 @@ def Getbooking():
 			images = filter.findall(testImages)
 			filterImages = images[0]
 			print(searchName[3])
-			checkTime = searchName[3]
-			if checkTime == "morning":
-				timeMsg = "早上九點到下午四點"
-			else:
-				timeMsg = "下午兩點到下午八點"
+			# checkTime = searchName[3]
+			# if checkTime == "morning":
+			# 	timeMsg = "早上九點到下午四點"
+			# else:
+			# 	timeMsg = "下午兩點到下午八點"
 
-			print(timeMsg)
+			# print(timeMsg)
 
 			return jsonify(
 				{"data": {
@@ -157,7 +157,7 @@ def Getbooking():
 					"image": filterImages
 					},
 					"date": searchName[2],
-					"time": timeMsg,
+					"time": searchName[3],
 					"price": searchName[4]
 				}
 			})

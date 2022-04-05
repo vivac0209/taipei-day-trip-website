@@ -152,32 +152,27 @@ function queryState(){
             // logignFrom.style.display = "none";
 
         }else{
-            navLogin.style.display = "block";
-            logout.style.display = "none";
+            // navLogin.style.display = "block";
+            // logout.style.display = "none";
+            window.location.href = "/";
         }
     })
 }
 
 queryState();
 
-logoutBtn.addEventListener('click',function(){
-    
-    fetch(checkUrl,{method: "GET"})
-    .then((res)=> {
-        return res.json();
-    })
-    .then((result)=>{
-        console.log("tset");
-        if (result["data"] != null){
-            navLogin.style.display = "none";
-            logout.style.display = "block";
-            // logignFrom.style.display = "none";
 
-        }else{
-            navLogin.style.display = "block";
-            logout.style.display = "none";
-        }
-    })
+logoutBtn.addEventListener('click',function(){
+    let logoutkUrl='/api/user';
+    fetch(logoutkUrl,{method: "DELETE"})
+        .then((res)=> {
+            return res.json();
+         })
+        .then((result)=>{
+            if (result["ok"]){
+                window.location.href = "/";
+            }
+        })
 })
 
 /* show booking data */
@@ -212,6 +207,7 @@ let showtime = document.getElementById("showTime");
 let showSpend = document.getElementById("showSpend");
 let showLoc = document.getElementById("showLoc");
 let showPic = document.getElementById("viewPic");
+let Amount = document.getElementById("Amount");
 
 let deleteBtn = document.getElementById("deleteIcon");
 
@@ -233,12 +229,22 @@ function GetBooking(){
                 showView.textContent = result["data"]["attraction"]["name"];
                 showDate.textContent = result["data"]["date"];
                 
-                showtime.textContent = result["data"]["time"];
+                
                 showSpend.textContent = result["data"]["price"];
                 showLoc.textContent = result["data"]["attraction"]["address"];
 
                 console.log(result["data"]["attraction"]["image"]);
                 showPic.style.backgroundImage = 'url(' +result["data"]["attraction"]["image"]+ ')';
+
+                let settingTime =  result["data"]["time"];
+                if (settingTime == "morning"){
+                    showtime.textContent = "早上九點到下午四點";
+                    Amount.textContent = "新台幣 2000元";
+                }
+                else {
+                    showtime.textContent = "下午四點到晚上九點";
+                    Amount.textContent = "新台幣 2500元";
+                }
             }
 
         })  
