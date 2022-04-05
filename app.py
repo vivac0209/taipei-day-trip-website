@@ -114,106 +114,106 @@ def Logout():
 ###############################################################
 @app.route("/api/booking",methods=['GET'])
 def Getbooking():
-	# try:
-	if "email" in session:
-		print("app test")
-		nameID = session["id"]
+	try:
+		if "email" in session:
+			print("app test")
+			nameID = session["id"]
 
-		salsearchName = f"SELECT * FROM `Newbooking` WHERE `member_id`= '{nameID}';"
-		cursor.execute(salsearchName)
-		searchName = cursor.fetchone()
-		cursor.reset()
-		# print(searchName)
-
-		if searchName == None:
-			return jsonify({"data": None})
-		else:
-			attractionID = searchName[1]
-			sqlSearchBooking = f"SELECT * FROM `viewList` WHERE `id`= '{attractionID}';"
-			cursor.execute(sqlSearchBooking)
-			SearchBookingResult = cursor.fetchone()
+			salsearchName = f"SELECT * FROM `Newbooking` WHERE `member_id`= '{nameID}';"
+			cursor.execute(salsearchName)
+			searchName = cursor.fetchone()
 			cursor.reset()
-			# print(SearchBookingResult)
+			# print(searchName)
 
-			testImages = SearchBookingResult[9]
-			filter = re.compile(r'(https?://[^, "]*?\.(?:jpg|png|jpeg|JPG))')
-			images = filter.findall(testImages)
-			filterImages = images[0]
-			print(searchName[3])
-			# checkTime = searchName[3]
-			# if checkTime == "morning":
-			# 	timeMsg = "早上九點到下午四點"
-			# else:
-			# 	timeMsg = "下午兩點到下午八點"
+			if searchName == None:
+				return jsonify({"data": None})
+			else:
+				attractionID = searchName[1]
+				sqlSearchBooking = f"SELECT * FROM `viewList` WHERE `id`= '{attractionID}';"
+				cursor.execute(sqlSearchBooking)
+				SearchBookingResult = cursor.fetchone()
+				cursor.reset()
+				# print(SearchBookingResult)
 
-			# print(timeMsg)
+				testImages = SearchBookingResult[9]
+				filter = re.compile(r'(https?://[^, "]*?\.(?:jpg|png|jpeg|JPG))')
+				images = filter.findall(testImages)
+				filterImages = images[0]
+				print(searchName[3])
+				# checkTime = searchName[3]
+				# if checkTime == "morning":
+				# 	timeMsg = "早上九點到下午四點"
+				# else:
+				# 	timeMsg = "下午兩點到下午八點"
 
-			return jsonify(
-				{"data": {
-					"attraction": {
-					"id": SearchBookingResult[0],
-					"name": SearchBookingResult[1],
-					"address": SearchBookingResult[4],
-					"image": filterImages
-					},
-					"date": searchName[2],
-					"time": searchName[3],
-					"price": searchName[4]
-				}
-			})
-	else:
-		return jsonify({"error":True,"message":"尚未登入"})
+				# print(timeMsg)
+
+				return jsonify(
+					{"data": {
+						"attraction": {
+						"id": SearchBookingResult[0],
+						"name": SearchBookingResult[1],
+						"address": SearchBookingResult[4],
+						"image": filterImages
+						},
+						"date": searchName[2],
+						"time": searchName[3],
+						"price": searchName[4]
+					}
+				})
+		else:
+			return jsonify({"error":True,"message":"尚未登入"})
 		
-	# except:
-	# 	return jsonify({"error":True,"message":"伺服器內部錯誤"})
+	except:
+		return jsonify({"error":True,"message":"伺服器內部錯誤"})
 
 @app.route("/api/booking",methods=['POST'])
 def Postbooking():
-	# try:
-	if "email" not in session:
-		return jsonify({"error":True,"message":"尚未登入"})
-	else:
-		Postbooking = request.get_json()
-		attraction_id = Postbooking['attractionId']
-		PostbookingData = Postbooking['date']
-		PostbookingTime = Postbooking['time']
-		PostbookingPrice = Postbooking['price']
-
-		print(attraction_id,PostbookingData,PostbookingTime,PostbookingPrice)
-		
-		if PostbookingData == "" or PostbookingTime == "":
-			return jsonify({"error":True,"message":"尚未選擇日期或是時間"})
+	try:
+		if "email" not in session:
+			return jsonify({"error":True,"message":"尚未登入"})
 		else:
-			PostnameID = session["id"]
-			salPostbooking = f"SELECT * FROM `Newbooking` WHERE member_id = '{PostnameID}';"
-			cursor.execute(salPostbooking)
-			PostbookingResult = cursor.fetchone()
-			cursor.reset()
-			print(PostbookingResult)
+			Postbooking = request.get_json()
+			attraction_id = Postbooking['attractionId']
+			PostbookingData = Postbooking['date']
+			PostbookingTime = Postbooking['time']
+			PostbookingPrice = Postbooking['price']
 
-			if PostbookingResult == None:
-				sqladd = f"""
-				INSERT INTO Newbooking (member_id,attraction_id,data,time,price)
-				VALUES('{PostnameID}','{attraction_id}','{PostbookingData}','{PostbookingTime}','{PostbookingPrice}');
-				"""
-				cursor.execute(sqladd)
-				db.commit()
-				cursor.reset()
-				print("INSERT")
-				return jsonify({"ok":True})
+			print(attraction_id,PostbookingData,PostbookingTime,PostbookingPrice)
+			
+			if PostbookingData == "" or PostbookingTime == "":
+				return jsonify({"error":True,"message":"尚未選擇日期或是時間"})
 			else:
-				sqlUpdate = f"""
-				UPDATE `Newbooking` 
-				SET attraction_id='{attraction_id}',data='{PostbookingData}',time='{PostbookingTime}',price='{PostbookingPrice}'
-				WHERE member_id = '{PostnameID}';
-				"""
-				cursor.execute(sqlUpdate)
-				db.commit()
+				PostnameID = session["id"]
+				salPostbooking = f"SELECT * FROM `Newbooking` WHERE member_id = '{PostnameID}';"
+				cursor.execute(salPostbooking)
+				PostbookingResult = cursor.fetchone()
 				cursor.reset()
-				print("update")
-				return jsonify({"ok":True})
-	# except:
-	# 	return jsonify({"error":True,"message":"伺服器內部錯誤"})
+				print(PostbookingResult)
+
+				if PostbookingResult == None:
+					sqladd = f"""
+					INSERT INTO Newbooking (member_id,attraction_id,data,time,price)
+					VALUES('{PostnameID}','{attraction_id}','{PostbookingData}','{PostbookingTime}','{PostbookingPrice}');
+					"""
+					cursor.execute(sqladd)
+					db.commit()
+					cursor.reset()
+					print("INSERT")
+					return jsonify({"ok":True})
+				else:
+					sqlUpdate = f"""
+					UPDATE `Newbooking` 
+					SET attraction_id='{attraction_id}',data='{PostbookingData}',time='{PostbookingTime}',price='{PostbookingPrice}'
+					WHERE member_id = '{PostnameID}';
+					"""
+					cursor.execute(sqlUpdate)
+					db.commit()
+					cursor.reset()
+					print("update")
+					return jsonify({"ok":True})
+	except:
+		return jsonify({"error":True,"message":"伺服器內部錯誤"})
 
 @app.route("/api/booking",methods=['DELETE'])
 def Deletebooking():
@@ -292,7 +292,6 @@ def attractions():
 			
 			#Responses
 			return jsonify({"nextPage":next_page, "data":viewList})
-				
 
 			#keyword 有值 做景點搜尋
 		else:
@@ -404,6 +403,4 @@ def booking():
 def thankyou():
 	return render_template("thankyou.html")
 
-
-# app.run(host='0.0.0.0', port=3000)
-app.run()
+app.run(host='0.0.0.0', port=3000)
