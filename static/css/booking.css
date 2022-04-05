@@ -44,49 +44,13 @@ table {
 *,*::before,*::after{
     box-sizing: border-box;
 }
-
 .body{
     font-family: Noto Sans TC;
     font-style: normal;
-    background-color:white;
-    
+   
 }
-
-.header {
-    width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 12px;
-    padding-bottom: 12px;
-}
-.Booking{
+.navBooking{
     cursor:pointer;
-}
-.headerTitle{
-    color:#448899;
-    font-size: 30px;
-    line-height: 34px;
-    font-weight: bold;
-    padding-left: 30px;
-    cursor:pointer;
-}
-.functionMenu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 30px;
-}
-.functionMenu li {
-    color: #666666;
-    font-size: 16px;
-    padding-left: 14px;
-    line-height: 13px;
-}
-
-.banner {
-    background: linear-gradient(135deg, #AADDEE 0%, #66AABB 100%);
-    height: 320px;
 }
 .navlogin{
     cursor:pointer;
@@ -95,7 +59,6 @@ table {
     display: none;
     cursor:pointer;
 }
-
 .background{
     width: 100%;
     height: 100%;
@@ -108,7 +71,9 @@ table {
     display:none;
     
 }
-
+.headerTitle{
+    cursor:pointer;
+}
 /*做login*/
 .login{
     display: none;
@@ -131,7 +96,7 @@ table {
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
-    /* z-index: 30; */
+    /* z-index: 3; */
     
 }
 .loginClose{
@@ -150,7 +115,6 @@ table {
     right: 10px;
     cursor:pointer;
 }
-
 .navbar{
     background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
     width: 100%;
@@ -237,7 +201,6 @@ table {
     padding-bottom: 10px;
     cursor:pointer;
 }
-
 /*做signup*/
 .signup{
     display: none;
@@ -334,131 +297,249 @@ table {
     padding-bottom: 10px;
     cursor:pointer;
 }
-.banner{
-    position: relative;
-}
-
-
-.scoendBanner{
-
+.header {
     max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
-.queryArea {
-    padding-left: 30px;
+
+.headerTitle{
+    color:#448899;
+    font-size: 30px;
+    line-height: 34px;
+    font-weight: bold; 
 }
-.bannerTitle {
-    padding-top: 85px;
+.functionMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.queryArea h1{
-    font-size: 28px;
-    color: #F8F8F8;
-    line-height: 24px;
-}
-.queryArea p{
+.functionMenu li {
+    color: #666666;
     font-size: 16px;
     line-height: 13px;
-    color: #F8F8F8;
-    padding-top: 15px;
+    padding-right: 18px;
+}
+
+.attractionData{
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+.nameText{
+    padding-top: 20px;
+    padding-left: 100px;
+    padding-bottom: 26px;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 16px;
+    color: #666666;
+}
+.bookingData{
+    padding-left: 100px;
+    position: relative;
+    padding-bottom: 20px;
+}
+.deleteIcon{
+    position: absolute;
+    top:10px;
+    right:160px;
+    width: 1%;
+    height: 1%;
+    cursor:pointer;
+}
+.booking{
+    display: flex;
+
+}
+.viewPic{
+    width: 266px;
+    height: 200px;
+    padding-left: 110px;
+    padding-bottom: 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.viewData{
+    padding-left: 22px;
+}
+.bookingView{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 13px;
+    color: #448899;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+.date,.time,.Spend,.Loc{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 13px;
+    color: #666666;
+    padding-bottom: 20px;
+}
+.showDate{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 13px;
+    color: #666666;
+}
+.showtime{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 13px;
+    color: #666666;
+}
+.showSpend{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 13px;
+    color: #666666;
+}
+.showLoc{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 13px;
+    color: #666666;
+}
+.contactData{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 110px;
+    padding-top: 30px;
+}
+
+.contactH2{
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 16px;
+    color: #666666;
+    padding-bottom: 31px;
+}
+.memberName{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 13px;
+    padding-bottom: 29px;
+}
+
+.NoteMessage{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 13px;
+    color: #666666;
+    padding-bottom: 45px;
+}
+.line0{
+    border: 1px solid #E8E8E8;
+}
+.line1,.line2,.line3{
+    width: 1200px;
+    border: 1px solid #E8E8E8;
+}
+.CCdata{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 110px;
+    padding-top: 44px;
+}
+.memberDataH2{
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 16px;
+    color: #666666;
+    padding-bottom: 22px;
+}
+.ccItem{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 13px;
+    color: #666666;
+}
+.ccItem{
+    padding-bottom: 29px;
+}
+.ccNumber,.ccDate,.ccCode{
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 200px;
+    height: 38px;
+    font-weight: 400;
+    font-size: 16px;
+    padding-left: 10px;
+}
+.totalData{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+    text-align: end;
+}
+.totalAmount{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 13px;
+    color: #666666;
     padding-bottom: 25px;
 }
-.searchArea {
-    display: flex;
-    padding-bottom: 86px;
+.confirm{
+    padding-bottom: 72px;
+   
 }
-.searchArea input{
-    width: 400px;
-    height: 46px;
-    float:left;
-    border-width: 0px;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    font-size: 16px;
-    color: #757575;
-    font-weight: bold;
-    padding-left: 10px;
-}
-.searchArea button{
-    width: 60px;
-    height: 46px;
+.confirmbtn{
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 16px;
+    color: #FFFFFF;
     background: #448899;
-    float: right;
+    border-radius: 5px;
+    width: 173px;
+    height: 36px;
     border:none;
-    border-top-right-radius:8px;
-    border-bottom-right-radius:8px;
     cursor:pointer;
 }
-.bigImage{
-    max-width: 100%;
-}
-.content{
-    position: relative;
-
-    padding-top: 55px;
-}
-
-.boxArea {
-    max-width: 1200px;
-    display: flex;
-    justify-content:space-between;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    cursor:pointer;
-}
-.viewBox {
-    width: 270px;
-    height: 242px;
-    border: 1px solid #E8E8E8;
-    border-radius:5px;
-    margin-bottom: 30px;
-    text-decoration:none;
-}
-
-
-.img{
+.deleteBakkground{
+    display: none;
+    background-color: #AAAAAA;
     width: 100%;
-    aspect-ratio:16/9;
+    height: 100%;
+    position:absolute;
+    z-index: 100;
+    left: 0;
+    top: 120px;
 }
-.Title{
-    color: #757575;
-    font-size: 16px;
-    line-height: 13px;
-    font-weight: bold;
-    padding-left: 10px;
-    padding-top: 15px;
+.deleteBakkground h3{
+    color: #448899;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 20px;
 }
-.viewText{
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 10px 12px 10px;
-}
-.Mrt{
-    font-size: 16px;
-    line-height: 13px;
-    color: #757575;
-}
-.Category{
-    font-size: 16px;
-    line-height: 13px;
-    color: #757575;
-}
-.footer{
-    position: relative;
 
-    height: 104px;
+.footer{
+    height: 90px;
+    width: 100%;
     background:#757575;
     display: flex;
     align-items: center;
+    /* position: absolute;
+    bottom: 0; */
 }
+
 .footer p{
     font-size: 16px;
     color:#FFFFFF;
     align-items: center;
     margin:0 auto;
+    
 }
 @media (max-width:1200px){
+    
     .header{
         
         display: flex;
@@ -483,37 +564,62 @@ table {
         max-width: 340px;
         z-index: 2;
     }
-    .scoendBanner{
+    .line1,.line2,.line3{
+        border: 1px solid #E8E8E8;
+        width: 900px;
+    }
+    .totalData{
+        max-width: 800px;
         margin: 0 auto;
-        width: 100%;
-        position: relative;
+        padding-top: 30px;
+        text-align: end;
     }
-    .queryArea{
-        z-index: 1;
+}
+@media (max-width:900px){
+    .line1,.line2,.line3{
+        border: 1px solid #E8E8E8;
+        width: 700px;
     }
-    .bigImage {
-        position: absolute;
-        right: 20px;
-        
-    }
-    .boxArea{
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: space-around;
-    }
-    .viewBox{
-        width: 40%;
-        height: 30%;
-    }
-    
 }
 @media (max-width:800px){
-    .scoendBanner{
-        position: relative;
-        margin: 0 auto;
-        height: 100%;
-        overflow:hidden;
+    .booking{
+        display: flex;
+        flex-wrap:wrap;
     }
+    
+    .viewPic{
+        width: 500px;
+        height: 300px;
+        padding-left: 110px;
+        padding-bottom: 20px;
+    }
+    
+    .viewData{
+        padding-left: 10px;
+        padding-right: 20px;
+        padding-top: 20px;
+    }
+    .deleteIcon{
+        position: absolute;
+        top:460px;
+        right:200px;
+        width: 1%;
+        height: 1%;
+        cursor:pointer;
+    }
+    .totalData{
+        max-width: 600px;
+        margin: 0 auto;
+        padding-top: 30px;
+        text-align: end;
+    }
+    .NoteMessage{    
+    line-height: 15px;
+    }
+    .NoteMessage p{
+        word-wrap:break-word; 
+    }
+    
     .loginBox{
         position: fixed;
         top: 70px;
@@ -564,30 +670,31 @@ table {
         max-width:300px;
         height: 42px;
         padding-left: 10px;
-    }
-
-    .queryArea{
-        z-index: 1;
-    }
-    .bigImage{
-        position: absolute;
-        right: 0px;
-        bottom:0px;
-    }
-    .bigImage img{
-        max-width: 450px;
-        max-height: 450px;
-    }
-    .searchArea input{
-        max-width: 230px;
-        max-height: 46px;
-    }
-    .searchArea button{
-        max-width: 60px;
-        max-height: 46px;
     }
 }
 @media (max-width:700px){
+    .line1,.line2,.line3{
+        border: 1px solid #E8E8E8;
+        width: 400px;
+        padding-right: 150px;
+    }
+    .bookingData{
+        padding-left: 90px;
+    }
+    .booking{
+        display: flex;
+        flex-direction:column;
+    }
+    .viewPic{
+        width: 360px;
+        height: 280px;
+    }
+    
+   
+    .NoteMessage p{
+        word-wrap:break-word; 
+    }
+
     .loginBox{
         position: fixed;
         top: 70px;
@@ -642,20 +749,135 @@ table {
         height: 42px;
         padding-left: 15px;
     }
+    .totalData{
+        max-width: 600px;
+        margin: 0 auto;
+        padding-top: 30px;
+        text-align: end;
+    }
 }
-@media (max-width:360px){
-    .background{
-        width: 100%;
-        height: 70%;
-        position:absolute;
-        z-index: 100;
-        left: 0;
-        top: 0;
-        background-color: rgba(43, 39, 39, 0.5);
-        /* opacity: 0.5; */
-        display:none;
+@media (max-width:600px){
+    .attractionData{
+        max-width: 600px;
         
     }
+    .nameText{
+        padding-left: 50px;
+    }
+    .bookingData{
+        padding-left: 50px;
+    }
+    .viewPic{
+        width: 330px;
+        height: 280px;
+        padding-bottom: 20px;
+    }
+    
+    .contactData,.CCdata{
+        padding-left: 70px;
+    }
+    .date,.time,.Spend,.Loc{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 10%;
+        color: #666666;
+        padding-bottom: 20px;
+    }
+    .Loc{
+        padding-bottom: 60px;
+    }
+    .deleteIcon{
+        position: absolute;
+        top:500px;
+        right:180px;
+        width: 1%;
+        height: 1%;
+        cursor:pointer;
+    }
+    .totalData{
+        max-width: 300px;
+        margin: 0 auto;
+        padding-top: 30px;
+        text-align: end;
+    }
+    .line1,.line2,.line3{
+        border: 1px solid #E8E8E8;
+        width: 440px;
+        padding-right: 80px;
+    }
+}
+@media (max-width:500px){
+    .line1,.line2,.line3{
+        border: 1px solid #E8E8E8;
+        width: 340px;
+        padding-left: 70px;
+    }
+    .deleteIcon{
+        position: absolute;
+        top:500px;
+        right:80px;
+        width: 1%;
+        height: 1%;
+        cursor:pointer;
+    }
+    .bookingData{
+        padding-left: 30px;
+    }
+    .viewPic{
+        width: 360px;
+        height: 280px;
+        
+        padding-bottom: 20px;
+    }
+    
+}
+@media (max-width:400px){
+    .line1,.line2,.line3{
+        border: 1px solid #E8E8E8;
+        width: 300px;
+        padding-left: 20px;
+    }
+    .attractionData{
+        max-width: 500px;
+        
+    }
+    .nameText{
+        padding-left: 10px;
+    }
+    .bookingData{
+        padding-left: 30px;
+    }
+    .viewPic{
+        width: 260px;
+        height: 260px;
+        
+        padding-bottom: 20px;
+    }
+
+   
+    .contactData,.CCdata{
+        padding-left:10px;
+    }
+    .deleteIcon{
+        position: absolute;
+        top:450px;
+        right:40px;
+        width: 1%;
+        height: 1%;
+        cursor:pointer;
+    }
+}
+@media (max-width:360px){
+    .bookingData{
+        padding-left: 10px;
+    }
+    .viewPic{
+        width: 320px;
+        height: 220px;
+        
+        padding-bottom: 20px;
+    }
+   
     .header {
         display: flex;
         align-items: center;
@@ -717,70 +939,5 @@ table {
         max-width:280px;
         height: 42px;
         padding-left: 15px;
-    }
-    .banner{
-        height: 100%;
-    }
-    .scoendBanner{
-        position: relative;
-        margin: 0 auto;
-        overflow:hidden;
-    }
-    .queryArea{
-        width: 100%;
-        height: 100%;
-        
-    }
-    .bigImage{
-        position: absolute;
-        right: 0px;
-        bottom:0px;
-    }
-    .bigImage img{
-        max-width: 250px;
-        max-height: 150px;
-    }
-    .bannerTitle {
-        font-size: 26px;
-        padding-bottom: 20px;
-    }
-    .queryArea p{
-        font-size: 16px;
-    }
-    .bigImage {
-        position: absolute;
-        bottom:0px;
-        right: -90px;
-    }
-    .bigImage img{
-        max-width: 320px;
-        max-height: 300px;
-    }
-    .searchArea input{
-        max-width: 230px;
-        max-height: 46px;
-    }
-    .searchArea button{
-        max-width: 60px;
-        max-height: 46px;
-    }
-    .boxArea{
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-    }
-    .viewBox{
-        width: 300px;
-        height: 80%;
-    }
-    .Title{
-        font-size: 10px;
-        letter-spacing: 1em;
-    }
-    .Mrt{
-        font-size: 8px;
-    }
-    .Category{
-        font-size: 8px;
     }
 }

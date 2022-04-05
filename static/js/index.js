@@ -320,3 +320,21 @@ logoutBtn.addEventListener('click',function(){
             }
         })
 })
+
+let Booking = document.getElementById("Booking");
+Booking.addEventListener('click',function(){
+    let UserUrl='/api/user';
+    fetch(UserUrl,{method: "GET"})
+        .then((res)=> {
+            return res.json();
+         })
+        .then((result)=>{
+            if (result["data"] == null){
+                document.getElementById("login").style.display = "block";
+                document.getElementById("background").style.display = "block";
+            }else{
+                window.location.href = "/booking";
+            }
+        })
+})
+

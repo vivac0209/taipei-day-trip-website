@@ -74,6 +74,10 @@ table {
     display:none;
     
 }
+.headerTitle{
+    cursor:pointer;
+}
+
 /*做login*/
 .login{
     display: none;
@@ -286,6 +290,9 @@ table {
     text-align: center;
     cursor:pointer;
 }
+.Booking{
+    cursor:pointer;
+}
 .gotoLogin{
     width: 310px;
     height: 22px;
@@ -430,7 +437,7 @@ table {
 }
 .radioBox{
     padding-top: 24px;
-    padding-bottom: 20px;
+    padding-bottom: 16px;
     padding-left: 20px;
     background-color: #E8E8E8;
 }
@@ -585,6 +592,16 @@ input[type='radio']:checked:after {
 }
 
 @media (max-width:1200px){
+    .ballArea{
+    
+        position: absolute;
+        bottom:20px;
+        left: 40%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
     .header{
         display: flex;
         justify-content: space-between;
@@ -662,7 +679,7 @@ input[type='radio']:checked:after {
     } */
     .radioBox{
         padding-top: 14px;
-        padding-bottom: 10px;
+        padding-bottom: 30px;
         padding-left: 16px;
         color: #666666;
         font-weight: 700;
