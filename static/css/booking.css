@@ -372,7 +372,7 @@ table {
     font-size: 16px;
     line-height: 13px;
     color: #448899;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 30px;
 }
 .date,.time,.Spend,.Loc{
@@ -426,6 +426,22 @@ table {
     line-height: 13px;
     padding-bottom: 29px;
 }
+.contactName,.contactEmail,.contactPhone{
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 200px;
+    height: 38px;
+    font-weight: 400;
+    font-size: 16px;
+    padding-left: 10px;
+    
+}
+input[type=text]{
+    color: #000000;
+}
+
 
 .NoteMessage{
     font-weight: 700;
@@ -435,11 +451,15 @@ table {
     padding-bottom: 45px;
 }
 .line0{
-    border: 1px solid #E8E8E8;
+    border: none;
+    height: 1px;
+    background-color:#E8E8E8;
 }
 .line1,.line2,.line3{
     width: 1200px;
-    border: 1px solid #E8E8E8;
+    border: none;
+    height: 1px;
+    background-color:#E8E8E8;
 }
 .CCdata{
     max-width: 1200px;
@@ -503,24 +523,36 @@ table {
     border:none;
     cursor:pointer;
 }
-.deleteBakkground{
+.deleteMsg{
     display: none;
-    background-color: #AAAAAA;
+    width: 980px;
+    height: 24px;
+    padding-left: 100px;
+    padding-bottom: 20px;
+}
+.deleteMsg h3{
+    color: #666666;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 13px;
+    padding-top: 10px;
+}
+.deleteBackground{
+    display: none;
     width: 100%;
     height: 100%;
     position:absolute;
     z-index: 100;
     left: 0;
-    top: 120px;
+    top: 180px;
+    background:#757575;
 }
-.deleteBakkground h3{
-    color: #448899;
-    font-weight: 700;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 20px;
+.deleteBackground p{
+    font-size: 16px;
+    color:#FFFFFF;
+    
+    padding: 40px 40%;
 }
-
 .footer{
     height: 90px;
     width: 100%;
@@ -565,7 +597,9 @@ table {
         z-index: 2;
     }
     .line1,.line2,.line3{
-        border: 1px solid #E8E8E8;
+        border: none;
+        height: 1px;
+        background-color:#E8E8E8;
         width: 900px;
     }
     .totalData{
@@ -577,7 +611,9 @@ table {
 }
 @media (max-width:900px){
     .line1,.line2,.line3{
-        border: 1px solid #E8E8E8;
+        border: none;
+        height: 1px;
+        background-color:#E8E8E8;
         width: 700px;
     }
 }
@@ -674,7 +710,9 @@ table {
 }
 @media (max-width:700px){
     .line1,.line2,.line3{
-        border: 1px solid #E8E8E8;
+        border: none;
+        height: 1px;
+        background-color:#E8E8E8;
         width: 400px;
         padding-right: 150px;
     }
@@ -801,14 +839,18 @@ table {
         text-align: end;
     }
     .line1,.line2,.line3{
-        border: 1px solid #E8E8E8;
+        border: none;
+        height: 1px;
+        background-color:#E8E8E8;
         width: 440px;
         padding-right: 80px;
     }
 }
 @media (max-width:500px){
     .line1,.line2,.line3{
-        border: 1px solid #E8E8E8;
+        border: none;
+        height: 1px;
+        background-color:#E8E8E8;
         width: 340px;
         padding-left: 70px;
     }
@@ -833,7 +875,9 @@ table {
 }
 @media (max-width:400px){
     .line1,.line2,.line3{
-        border: 1px solid #E8E8E8;
+        border: none;
+        height: 1px;
+        background-color:#E8E8E8;
         width: 300px;
         padding-left: 20px;
     }
@@ -883,10 +927,10 @@ table {
         align-items: center;
     }
     .header h3{
-        font-size: 22px;
+        font-size: 26px;
     }
     .functionMenu li{
-        font-size: 10px;
+        font-size: 16px;
     }
     .loginBox{
         position: fixed;

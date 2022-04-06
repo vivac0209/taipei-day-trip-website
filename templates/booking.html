@@ -68,6 +68,12 @@
 
         <div class="attractionData">
             <h2 class="nameText">您好，<span id="handle"></span>，待預訂的行程如下:</h2>
+            <div class="deleteMsg" id="deleteMsg">
+                <h3>目前沒有任何預訂的行程</h3>
+            </div>
+            <div class="deleteBackground" id="deleteBackground">
+                <p>COPYRIGHT © 2021 台北一日遊</p>
+            </div>
             <div class="bookingData" id="bookingData">
                 <div class="deleteIcon" id="deleteIcon"><img src="../static/images/del.png" alt="#"></div>
                 <div class="booking">
@@ -93,10 +99,8 @@
                 
             </div>
         </div>
-        <div class="deleteBakkground" id="deleteBakkground">
-            <h3>暫時沒有預定行程</h3>
-        </div>
-        <hr / class="line1">
+        
+        <hr / class="line1" id="line1">
 
         <div class="contactData" id="contactData">
             <h2 class="contactH2">您的聯絡資訊</h2>
@@ -108,13 +112,13 @@
                     <input type="text" placeholder="電子信箱" id="contactEmail" class="contactEmail">
                 </div>
                 <div class="memberName">手機號碼:
-                    <input type="tel" placeholder="手機號碼" id="contactPhoto" class="contactPhoto">
+                    <input type="tel" placeholder="手機號碼" id="contactPhoto" class="contactPhone">
                 </div>
                 <div class="NoteMessage"><p>請保持手機通暢，準時到達，導覽人員將用手機與您聯繫，務必留下正確的聯絡方式。</p></div>
             </from>
         </div>
 
-        <hr / class="line2">
+        <hr / class="line2" id="line2">
 
         <div class="CCdata" id="CCdata">
             <h2 class="memberDataH2">信用卡付款資訊</h2>
@@ -130,9 +134,9 @@
             </div>
         </div>
 
-        <hr / class="line3">
+        <hr / class="line3" id="line3">
 
-        <div class="totalData">
+        <div class="totalData" id="totalData">
             <div class="totalAmount">總價:
                 <span class="Amount" id="Amount"></span>
             </div>
@@ -141,7 +145,7 @@
             </div>
         </div>
         
-        <div class="footer">
+        <div class="footer" id="footer">
             <p>COPYRIGHT © 2021 台北一日遊</p>
         </div>
     </div>

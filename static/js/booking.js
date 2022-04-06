@@ -268,16 +268,30 @@ deleteBtn.addEventListener("click",function(){
     })
 })
 
-let deleteBakkground =document.getElementById("deleteBakkground");
+let deleteMsg = document.getElementById("deleteMsg");
+let deleteBackground = document.getElementById("deleteBackground");
 let contactData =document.getElementById("contactData");
 let bookingData =document.getElementById("bookingData");
 let CCdata =document.getElementById("CCdata");
+let totalData = document.getElementById("totalData");
+let footer = document.getElementById("footer");
+
+let line1 = document.getElementById("line1");
+let line2 = document.getElementById("line2");
+let line3 = document.getElementById("line3");
+
 
 function noData(){
-    deleteBakkground.style.display="block";
+    deleteMsg.style.display="block";
+    deleteBackground.style.display="block";
     contactData.style.display="none";
     bookingData.style.display="none";
     CCdata.style.display="none";
+    totalData.style.display="none";
+    line1.style.display="none";
+    line2.style.display="none";
+    line3.style.display="none";
+    footer.style.display="none";
 }
 
 let headerTitle = document.getElementById("headerTitle");
