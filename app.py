@@ -7,7 +7,7 @@ import re
 from flask_cors import CORS
 
 app=Flask(__name__)
-CORS(app)
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 app.config["JSON_AS_ASCII"]=False
 app.config["TEMPLATES_AUTO_RELOAD"]=True
 app.secret_key="qqqqq"
