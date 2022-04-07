@@ -329,6 +329,103 @@ logoutBtn.addEventListener('click',function(){
         })
 })
 
+let navBooking = document.getElementById("Booking")
+
+navBooking.addEventListener('click',function(){
+    let UserUrl='/api/user';
+    fetch(UserUrl,{method: "GET"})
+        .then((res)=> {
+            return res.json();
+         })
+        .then((result)=>{
+            if (result["data"] == null){
+                document.getElementById("login").style.display = "block";
+                document.getElementById("background").style.display = "block";
+            }else{
+                window.location.href = "/booking";
+            }
+        })
+})
+
+
+let checkBtn = document.getElementById("checkBtn")
+checkBtn.addEventListener('click',function(){
+    let UserUrl='/api/user';
+    fetch(UserUrl,{method: "GET"})
+        .then((res)=> {
+            return res.json();
+         })
+        .then((result)=>{
+            if (result["data"] == null){
+                document.getElementById("login").style.display = "block";
+                document.getElementById("background").style.display = "block";
+            }else{
+                navLogin.style.display = "none";
+                logout.style.display = "block";
+            }
+        })
+})
+
+
+CreateBooking();
+
+function CreateBooking(){
+
+    let checkBtn1 = document.getElementById("checkBtn")
+    checkBtn1.addEventListener('click',function(){
+        let getID = window.location.href;
+        let attractionID = getID.split("/")[4];
+        let dateValue = document.getElementById("date").value;
+        let timeValue = document.querySelector('input[class="radio"]:checked').value;
+        let price = 0;
+        console.log(attractionID,dateValue,timeValue);
+        if (dateValue == ""){
+            let dateMsg = document.getElementById("dateMsg");
+            dateMsg.textContent = "請選擇日期";
+        }
+        else{
+        
+            if (timeValue == "morning"){
+                price = 0+2000;
+            }else {
+                price = 0+2500;
+            }
+            let bookingkUrl='/api/booking';
+            fetch(bookingkUrl,{
+                method: "POST",
+                headers : { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    "attractionId": attractionID,
+                    "date": dateValue,
+                    "time": timeValue,
+                    "price": price
+                })
+            })
+            .then((res)=> {
+                return res.json();
+             })
+            .then((result)=>{
+                if (result["ok"]){
+                    window.location.href = "/booking";
+                }
+                else {
+                    let errorMsg = document.getElementById("errorMsg");
+                    errorMsg.textContent = result["message"];
+                }
+            })
+        }
+    })
+
+}
+
+let headerTitle = document.getElementById("headerTitle");
+headerTitle.addEventListener('click',function(){
+    window.location.href = "/";
+})
+
 
 /* <div class="function">
     <div class="viewLocation">

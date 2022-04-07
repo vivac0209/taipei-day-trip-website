@@ -60,13 +60,16 @@ table {
     padding-top: 12px;
     padding-bottom: 12px;
 }
-
+.Booking{
+    cursor:pointer;
+}
 .headerTitle{
     color:#448899;
     font-size: 30px;
     line-height: 34px;
     font-weight: bold;
     padding-left: 30px;
+    cursor:pointer;
 }
 .functionMenu {
     display: flex;
@@ -661,7 +664,7 @@ table {
         font-size: 22px;
     }
     .functionMenu li{
-        font-size: 10px;
+        font-size: 16px;
     }
     .loginBox{
         position: fixed;

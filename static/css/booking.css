@@ -44,20 +44,17 @@ table {
 *,*::before,*::after{
     box-sizing: border-box;
 }
-
 .body{
     font-family: Noto Sans TC;
     font-style: normal;
-    /* position: relative; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
+   
+}
+.navBooking{
+    cursor:pointer;
 }
 .navlogin{
     cursor:pointer;
 }
-
 .logout{
     display: none;
     cursor:pointer;
@@ -77,7 +74,6 @@ table {
 .headerTitle{
     cursor:pointer;
 }
-
 /*做login*/
 .login{
     display: none;
@@ -290,9 +286,6 @@ table {
     text-align: center;
     cursor:pointer;
 }
-.Booking{
-    cursor:pointer;
-}
 .gotoLogin{
     width: 310px;
     height: 22px;
@@ -330,253 +323,235 @@ table {
     line-height: 13px;
     padding-right: 18px;
 }
-.content{
+
+.attractionData{
     max-width: 1200px;
-    display: flex;
-    justify-content:center;
     margin: 0 auto;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    
 }
-.images{
+.nameText{
+    padding-top: 20px;
+    padding-left: 100px;
+    padding-bottom: 26px;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 16px;
+    color: #666666;
+}
+.bookingData{
+    padding-left: 100px;
     position: relative;
+    padding-bottom: 20px;
 }
-.pic {
-    width: 570px;
-    height: 330px;
+.deleteIcon{
+    position: absolute;
+    top:10px;
+    right:160px;
+    width: 1%;
+    height: 1%;
+    cursor:pointer;
+}
+.booking{
+    display: flex;
+
+}
+.viewPic{
+    width: 266px;
+    height: 200px;
+    padding-left: 110px;
+    padding-bottom: 30px;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 5px;
-    margin-right: 20px;
-    
-}
-.leftArrow{
-    position: absolute;
-    left:5px;
-    top:50%;
-    background-color: Transparent;
-    border: none;
-    cursor:pointer;
-}
-.rightArrow{
-    position: absolute;
-    right:25px;
-    top:50%;
-    background-color: Transparent;
-    border: none;
-    cursor:pointer;
-}
-.ballArea{
-    
-    position: absolute;
-    bottom:10px;
-    left: 40%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
-}
-.ball{
-    /* background-color: white; */
-    border-radius: 100px;
-    width: 20px;
-    height: 20px;
-    border: 1px solid White;
-    transform: scale(0.5, 0.5);
 }
 
-.changeText1 h2{
-    font-size: 24px;
-    line-height: 24px;
+.viewData{
+    padding-left: 22px;
+}
+.bookingView{
     font-weight: 700;
+    font-size: 16px;
+    line-height: 13px;
+    color: #448899;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.date,.time,.Spend,.Loc{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 13px;
+    color: #666666;
     padding-bottom: 20px;
 }
-
-.changeText2 p{
-    font-size: 16px;
-    line-height: 13px;
-    padding-bottom: 16px;
-}
-.function{
-    width: 570px;
-    border-radius: 5px;
-    padding-bottom: 16px;
-    margin-right: 20px;
-}
-.infornation{
-    max-width: 650px;
-    background: #E8E8E8;
-    border-radius: 5px;
-    height: 80%;
-}
-.infornation h4{
-    padding-top: 15px;
-    padding-bottom: 18px;
-    padding-left: 20px;
-    color: #666666;
-    font-size: 16px;
-    line-height: 13px;
-    font-weight: 700;
-}
-.infornation p{
-    color: #666666;
-    font-size: 16px;
-    line-height: 13px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-}
-.data{
-    color: #666666;
-    font-size: 16px;
-    line-height: 13px;
-    font-weight: 700;
-    padding-left: 20px;
-}
-.dataSelect{
-    cursor:pointer;
-}
-.radioBox{
-    padding-top: 24px;
-    padding-bottom: 16px;
-    padding-left: 20px;
-    background-color: #E8E8E8;
-}
-.radioBoxH4{
-    color: #666666;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 13px;
-}
-.Rtext{
-    color: #666666;
-    font-size: 16px;
-    line-height: 13px;
+.showDate{
     font-weight: 400;
-    
+    font-size: 16px;
+    line-height: 13px;
+    color: #666666;
 }
-input[type='radio']:after{
-    width: 18px;
-    height: 18px;
-    border-radius: 19px;
-    top: -2px;
-    left: -2px;
-    position: relative;
-    background-color: #FFFFFF;
-    content: '';
-    display: inline-block;
-    visibility: visible;
-    border: 2px solid #FFFFFF;
+.showtime{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 13px;
+    color: #666666;
 }
-input[type='radio']:checked:after {
-    width: 18px;
-    height: 18px;
-    border-radius: 19px;
-    top: -2px;
-    left: -2px;
-    position: relative;
-    background-color: #448899;
-    content: '';
-    display: inline-block;
-    visibility: visible;
-    border: 2px solid #FFFFFF;
+.showSpend{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 13px;
+    color: #666666;
+}
+.showLoc{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 13px;
+    color: #666666;
+}
+.contactData{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 110px;
+    padding-top: 30px;
 }
 
-.amount{
-    padding-left: 20px;
+.contactH2{
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 16px;
+    color: #666666;
+    padding-bottom: 31px;
+}
+.memberName{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 13px;
+    padding-bottom: 29px;
+}
+.contactName,.contactEmail,.contactPhone{
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 200px;
+    height: 38px;
+    font-weight: 400;
+    font-size: 16px;
+    padding-left: 10px;
+    
+}
+input[type=text]{
+    color: #000000;
+}
+
+
+.NoteMessage{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 13px;
+    color: #666666;
+    padding-bottom: 45px;
+}
+.line0{
+    border: none;
+    height: 1px;
+    background-color:#E8E8E8;
+}
+.line1,.line2,.line3{
+    width: 1200px;
+    border: none;
+    height: 1px;
+    background-color:#E8E8E8;
+}
+.CCdata{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 110px;
+    padding-top: 44px;
+}
+.memberDataH2{
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 16px;
+    color: #666666;
     padding-bottom: 22px;
 }
-.amountOrder{
-    color: #666666;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 13px;
-    
-}
-.changeAmount{
-    color: #666666;
+.ccItem{
     font-weight: 400;
     font-size: 16px;
     line-height: 13px;
+    color: #666666;
+}
+.ccItem{
+    padding-bottom: 29px;
+}
+.ccNumber,.ccDate,.ccCode{
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 200px;
+    height: 38px;
+    font-weight: 400;
+    font-size: 16px;
     padding-left: 10px;
 }
-.button{
-    padding-left: 20px;
-    padding-bottom: 12px;
-    
+.totalData{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+    text-align: end;
 }
-.checkBtn{
-    width: 154px;
-    height: 36px;
-    color: white;
+.totalAmount{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 13px;
+    color: #666666;
+    padding-bottom: 25px;
+}
+.confirm{
+    padding-bottom: 72px;
+   
+}
+.confirmbtn{
     font-weight: 400;
     font-size: 19px;
     line-height: 16px;
+    color: #FFFFFF;
     background: #448899;
     border-radius: 5px;
+    width: 173px;
+    height: 36px;
     border:none;
     cursor:pointer;
 }
-.line1{
-    border: none;
-    height: 1px;
-    background-color:#E8E8E8;
+.deleteMsg{
+    display: none;
+    width: 980px;
+    height: 24px;
+    padding-left: 100px;
+    padding-bottom: 20px;
 }
-.line2{
-    border: none;
-    height: 1px;
-    background-color:#E8E8E8;
-    width: 1180px;
-}
-.introduceArea{
-    max-width: 1180px;
-    margin: 0 auto;
-    padding-top: 16px;
-    margin-bottom: 60px;
-}
-.narrative{
-    padding-bottom: 10px;
-}
-.narrative p{
+.deleteMsg h3{
     color: #666666;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 150%;
-}
-.address{
-    padding-bottom: 16px;
-}
-.address h4{
-    color: #666666;
-    font-weight: 700;
     font-size: 16px;
-    line-height: 150%;
+    line-height: 13px;
+    padding-top: 10px;
 }
-.address p{
-    color: #666666;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 150%;
-    
+.deleteBackground{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    z-index: 100;
+    left: 0;
+    top: 180px;
+    background:#757575;
 }
-.traffic{
-    padding-bottom: 120px;
-}
-.traffic h4{
-    color: #666666;
-    font-weight: 700;
+.deleteBackground p{
     font-size: 16px;
-    line-height: 150%;
+    color:#FFFFFF;
     
-    display: flex;
-    align-items: center;
-}
-.traffic p{
-    color: #666666;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 150%;
-    display: flex;
-    align-items: center;
+    padding: 40px 40%;
 }
 .footer{
     height: 90px;
@@ -587,6 +562,7 @@ input[type='radio']:checked:after {
     /* position: absolute;
     bottom: 0; */
 }
+
 .footer p{
     font-size: 16px;
     color:#FFFFFF;
@@ -594,25 +570,15 @@ input[type='radio']:checked:after {
     margin:0 auto;
     
 }
-
 @media (max-width:1200px){
-    .ballArea{
     
-        position: absolute;
-        bottom:20px;
-        left: 40%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        
-    }
     .header{
+        
         display: flex;
         justify-content: space-between;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
-        max-width: 900px;
     }
     .loginBox{
         position: fixed;
@@ -630,133 +596,66 @@ input[type='radio']:checked:after {
         max-width: 340px;
         z-index: 2;
     }
-    .content{
-        max-width: 900px;
-    }
-    .pic{
-        max-width: 440px;
-        height: 300px;
-    }
-    .function{
-        max-width: 430px;
-        border-radius: 5px;
-        
-    }
-    .changeText1{
-        font-size: 18px;
-        line-height: 18px;
-        font-weight: 700;
-        
-    }
-    .changeText2 p{
-        font-size: 16px;
-        line-height: 8px;
-        padding-bottom: 14px;
-    }
-    .infornation h4{
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 16px;
-        color: #666666;
-        font-size: 14px;
-        line-height: 150%;
-        font-weight: 700;
-    }
-    .infornation p{
-        color: #666666;
-        font-size: 14px;
-        line-height: 150%;
-        padding-left: 16px;
-        padding-bottom: 14px;
-    }
-    .data{
-        color: #666666;
-        font-size: 14px;
-        line-height: 150%;
-        font-weight: 700;
-        padding-left: 16px;
-    }
-    /* .radio{
-        font-size: 14px;
-        line-height: 150%;
-        font-weight: 400;
-    } */
-    .radioBox{
-        padding-top: 14px;
-        padding-bottom: 30px;
-        padding-left: 16px;
-        color: #666666;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 150%;
-    }
-    .amount{
-        padding-left: 16px;
-        padding-bottom: 10px;
-    }
-    .amountOrder{
-        color: #666666;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 150%;
-    }
-    .changeAmount{
-        color: #666666;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 150%;
-    }
-    .button{
-        padding-left: 20px;
-        padding-bottom: 18px;
-    }
-    .checkBtn{
-        width: 120px;
-        height: 28px;
-        color: #FFFFFF;
-        font-weight: 400;
-        font-size: 15px;
-        line-height: 150%;
-        background: #448899;
-        border-radius: 5px;
-        border:none;
-    }
-    .introduceArea{
-        max-width: 890px;
-        margin: 0 auto;
-        padding-top: 10px;
-        margin-bottom: 60px;
-    }
-    .address{
-        padding-bottom: 10px;
-    }
-    .traffic{
-        padding-bottom: 130px;
-    }
-    .line2{
+    .line1,.line2,.line3{
         border: none;
         height: 1px;
         background-color:#E8E8E8;
-        width: 890px;
+        width: 900px;
     }
-    .footer{
-        
-        width: 100%;
-        background:#757575;
-        display: flex;
-        align-items: center;
-        height: 90px;
+    .totalData{
+        max-width: 800px;
+        margin: 0 auto;
+        padding-top: 30px;
+        text-align: end;
     }
 }
-
 @media (max-width:900px){
-    
-    .header{
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        max-width: 600px;
+    .line1,.line2,.line3{
+        border: none;
+        height: 1px;
+        background-color:#E8E8E8;
+        width: 700px;
     }
+}
+@media (max-width:800px){
+    .booking{
+        display: flex;
+        flex-wrap:wrap;
+    }
+    
+    .viewPic{
+        width: 500px;
+        height: 300px;
+        padding-left: 110px;
+        padding-bottom: 20px;
+    }
+    
+    .viewData{
+        padding-left: 10px;
+        padding-right: 20px;
+        padding-top: 20px;
+    }
+    .deleteIcon{
+        position: absolute;
+        top:460px;
+        right:200px;
+        width: 1%;
+        height: 1%;
+        cursor:pointer;
+    }
+    .totalData{
+        max-width: 600px;
+        margin: 0 auto;
+        padding-top: 30px;
+        text-align: end;
+    }
+    .NoteMessage{    
+    line-height: 15px;
+    }
+    .NoteMessage p{
+        word-wrap:break-word; 
+    }
+    
     .loginBox{
         position: fixed;
         top: 70px;
@@ -808,67 +707,37 @@ input[type='radio']:checked:after {
         height: 42px;
         padding-left: 10px;
     }
-
-    .content{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content:center;
-    }
-    .pic{
-        max-width: 550px;
-        height: 300px;
-    }
-    .function{
-        max-width: 550px;
-        border-radius: 5px;
-        padding-bottom: 10px;
-        padding-top: 20px;
-    }
-    .checkBtn{
-        width: 120px;
-        height: 32px;
-        color: #FFFFFF;
-        font-weight: 400;
-        font-size: 10px;
-        line-height: 100%;
-        background: #448899;
-        border-radius: 5px;
-        border:none;
-    }
-    
-    .introduceArea{
-        max-width: 500px;
-        margin: 0 auto;
-        padding-top: 10px;
-        height: 100%;
-        margin-bottom: 20px;
-    }
-    .address{
-        padding-bottom: 10px;
-    }
-    .traffic{
-        padding-bottom: 70px;
-    }
-    .line2{
+}
+@media (max-width:700px){
+    .line1,.line2,.line3{
         border: none;
         height: 1px;
         background-color:#E8E8E8;
-        width: 600px;
+        width: 400px;
+        padding-right: 150px;
     }
-    .footer{
-        padding-top: 10px;
-        height: 60px;
-        width: 100%;
-        
+    .bookingData{
+        padding-left: 90px;
+    }
+    .booking{
+        display: flex;
+        flex-direction:column;
+    }
+    .viewPic{
+        width: 360px;
+        height: 280px;
+    }
+    
+   
+    .NoteMessage p{
+        word-wrap:break-word; 
     }
 
-}
-@media (max-width:700px){
     .loginBox{
         position: fixed;
         top: 70px;
         left:50%;
-        max-width: 900px;
+        max-width: 350px;
         z-index: 2;
     }
     .LEmail{
@@ -893,7 +762,7 @@ input[type='radio']:checked:after {
         position: fixed;
         top: 70px;
         left:50%;
-        max-width: 900px;
+        max-width: 350px;
         z-index: 2;
     }
     .sName{
@@ -918,108 +787,150 @@ input[type='radio']:checked:after {
         height: 42px;
         padding-left: 15px;
     }
+    .totalData{
+        max-width: 600px;
+        margin: 0 auto;
+        padding-top: 30px;
+        text-align: end;
+    }
 }
 @media (max-width:600px){
-    .header{
-        display: flex;
-        justify-content: space-between;
-        /* width: 100%; */
-        max-width: 360px;
+    .attractionData{
+        max-width: 600px;
+        
     }
-    .headerTitle{
-        color:#448899;
-        font-size: 20px;
-        line-height: 28px;
-        font-weight: bold; 
+    .nameText{
+        padding-left: 50px;
     }
-
-    .functionMenu li {
-        color: #666666;
-        font-size: 16px;
-        line-height: 13px;
-        padding-right: 12px;
+    .bookingData{
+        padding-left: 50px;
     }
-    .pic{
-        max-width: 400px;
-        height: 300px;
-    }
-    .function{
-        max-width: 400px;
-        border-radius: 5px;
-        padding-bottom: 10px;
-        padding-top: 20px;
-    }
-    .introduceArea{
-        max-width: 400px;
-        margin: 0 auto;
-        padding-top: 10px;
-        height: 100%;
+    .viewPic{
+        width: 330px;
+        height: 280px;
         padding-bottom: 20px;
     }
-    .line2{
+    
+    .contactData,.CCdata{
+        padding-left: 70px;
+    }
+    .date,.time,.Spend,.Loc{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 10%;
+        color: #666666;
+        padding-bottom: 20px;
+    }
+    .Loc{
+        padding-bottom: 60px;
+    }
+    .deleteIcon{
+        position: absolute;
+        top:500px;
+        right:180px;
+        width: 1%;
+        height: 1%;
+        cursor:pointer;
+    }
+    .totalData{
+        max-width: 300px;
+        margin: 0 auto;
+        padding-top: 30px;
+        text-align: end;
+    }
+    .line1,.line2,.line3{
         border: none;
         height: 1px;
         background-color:#E8E8E8;
-        width: 400px;
+        width: 440px;
+        padding-right: 80px;
     }
 }
 @media (max-width:500px){
-    .header{
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        max-width: 320px;
-    }
-    .headerTitle{
-        font-size: 25px;
-    }
-    .pic{
-        max-width: 340px;
-        height: 300px;
-    }
-    .function{
-        max-width: 340px;
-        border-radius: 5px;
-        padding-bottom: 10px;
-        padding-top: 20px;
-        margin-right: 10px;
-    }
-    
-    .introduceArea{
-        max-width: 320px;
-        margin: 0 auto;
-        padding-top: 10px;
-        height: 100%;
-    }
-    .address{
-        padding-bottom: 10px;
-    }
-    .traffic{
-        padding-bottom: 40px;
-    }
-    .line2{
+    .line1,.line2,.line3{
         border: none;
         height: 1px;
         background-color:#E8E8E8;
-        width: 320px;
+        width: 340px;
+        padding-left: 70px;
     }
-    .footer{
-        height: 80px;
+    .deleteIcon{
+        position: absolute;
+        top:500px;
+        right:80px;
+        width: 1%;
+        height: 1%;
+        cursor:pointer;
+    }
+    .bookingData{
+        padding-left: 30px;
+    }
+    .viewPic{
+        width: 360px;
+        height: 280px;
+        
+        padding-bottom: 20px;
+    }
+    
+}
+@media (max-width:400px){
+    .line1,.line2,.line3{
+        border: none;
+        height: 1px;
+        background-color:#E8E8E8;
+        width: 300px;
+        padding-left: 20px;
+    }
+    .attractionData{
+        max-width: 500px;
+        
+    }
+    .nameText{
+        padding-left: 10px;
+    }
+    .bookingData{
+        padding-left: 30px;
+    }
+    .viewPic{
+        width: 260px;
+        height: 260px;
+        
+        padding-bottom: 20px;
+    }
+
+   
+    .contactData,.CCdata{
+        padding-left:10px;
+    }
+    .deleteIcon{
+        position: absolute;
+        top:450px;
+        right:40px;
+        width: 1%;
+        height: 1%;
+        cursor:pointer;
     }
 }
-
 @media (max-width:360px){
-    .background{
-        width: 100%;
-        height: 70%;
-        position:absolute;
-        z-index: 100;
-        left: 0;
-        top: 0;
-        background-color: rgba(43, 39, 39, 0.5);
-        /* opacity: 0.5; */
-        display:none;
+    .bookingData{
+        padding-left: 10px;
+    }
+    .viewPic{
+        width: 320px;
+        height: 220px;
         
+        padding-bottom: 20px;
+    }
+   
+    .header {
+        display: flex;
+        align-items: center;
+    }
+    .header h3{
+        font-size: 26px;
+    }
+    .functionMenu li{
+        font-size: 16px;
     }
     .loginBox{
         position: fixed;
@@ -1073,98 +984,4 @@ input[type='radio']:checked:after {
         height: 42px;
         padding-left: 15px;
     }
-    .header {
-        display: flex;
-        align-items: center;
-    }
-    .headerTitle{
-        font-size: 20px;
-    }
-   
-    .pic{
-        max-width: 330px;
-    }
-    
-    .changeText1{
-        font-size: 16px;
-        line-height: 150%;
-        font-weight: 700;
-        padding-bottom: 10px;
-    }
-    .changeText2 p{
-        font-size: 14px;
-        line-height: 8px;
-        padding-bottom: 14px;
-    }
-    .infornation h4{
-        padding-top: 14px;
-        padding-bottom: 10px;
-        color: #666666;
-        font-size: 14px;
-        line-height: 150%;
-        font-weight: 700;
-    }
-    .infornation p{
-        color: #666666;
-        font-size: 12px;
-        line-height: 120%;
-        padding-bottom: 18px;
-        padding-right: 10px;
-    }
-    .data{
-        color: #666666;
-        font-size: 14px;
-        line-height: 150%;
-        font-weight: 700;
-        
-    }
-    /* .radio{
-        font-size: 14px;
-        line-height: 150%;
-        font-weight: 400;
-    } */
-    .radioBox{
-        padding-top: 18px;
-        padding-bottom: 10px;
-        color: #666666;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 150%;
-    }
-    
- 
-
-    .amount{
-        padding-bottom: 20px;
-    }
-    .amountOrder{
-        color: #666666;
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 150%;
-    }
-    .changeAmount{
-        color: #666666;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 150%;
-    }
-    .checkBtn{
-        width: 160px;
-        height: 28px;
-        color: #FFFFFF;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 100%;
-        background: #448899;
-        border-radius: 5px;
-        border:none;
-    }
-    .introduceArea{
-        max-width: 300px;
-        padding-top: 10px;
-        height: 100%;
-        padding-bottom: 30px;
-    }
-    
 }
